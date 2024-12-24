@@ -1,6 +1,32 @@
 ---
-title: Welcome to Quartz
+title: Welcome !
 ---
 
-This is a blank Quartz installation.
-See the [documentation](https://quartz.jzhao.xyz) for how to get started.
+# Hi there 👋 I'm Antoine Déchappe, Senior Data Scientist
+
+## Who am I ?
+
+Proficient end-to-end Data Scientist, I am driven by the challenge of solving highly complex problems and unlocking the hidden value within them. I possess the soul of a treasure seeker, powered by a strong mathematical background, technical agility, and interpersonal skills. My journey in Data Science began nearly 10 years ago in my bedroom. It has since progressed through earning an MSc in AI from the University of Glasgow and a MSc. in Statistical Engineering from Mines Douai. I continue to pursue this path with the same intellectual curiosity and freshness.</h3>
+
+## What is this site for ?
+
+This site is a place where I share my thoughts, projects, researches and experiences. It is a way for me to keep track of my progress and to share my knowledge with the community. I am always open to feedback and suggestions, so feel free to reach out to me if you have any questions or comments.
+
+## Some facts about me
+
+- 🔭 I’m working on Natural Language Processing at @leroymerlin & @adeo
+- 🤖 Current hot topics involve LLMs efficiency & evaluation, RAGs, Agents, finetuning...
+- 🕵️ I have also tackled fraud detection.
+- 🫥 My not-so-secret favorite topic is Reinforcement Learning, I would love to apply its principles on a genuine industrial project.
+- 🥸 Fun fact about me: I used to think GANs where the next big thing and studied a lot about them... now I aim for more stable training curves.
+- 🎓 I am a certified [Google Cloud Professional Machine Learning Engineer](https://google.accredible.com/2c755aa9-55bc-4977-b61e-7decd812a43a?key=3b0e57f6a6826e7a39c8937d558851a71fa8d43b547e8db036d3d2a0c0a4c5da)
+
+## 🛠️ Tools & technologies I master
+
+<a href="https://www.arduino.cc/" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/arduino-1.svg" alt="arduino" width="40" height="40"/> </a> <a href="https://www.gnu.org/software/bash/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/gnu_bash/gnu_bash-icon.svg" alt="bash" width="40" height="40"/> </a> <a href="https://cloud.google.com" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/google_cloud/google_cloud-icon.svg" alt="gcp" width="40" height="40"/> </a> <a href="https://www.docker.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg" alt="docker" width="40" height="40"/> </a> <a href="https://www.langchain.com" target="_blank" rel="noreferrer"> <img src="https://avatars.githubusercontent.com/u/126733545?s=200&v=4" alt="langchain" width="40" height="40"/> </a> <a href="https://www.llamaindex.ai/" target="_blank" rel="noreferrer"> <img src="https://asset.brandfetch.io/id6a4s3gXI/idncpUsO_z.jpeg?updated=1701884586430" alt="llamaindex" width="40" height="40"/> </a> <a href="https://www.linux.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" alt="linux" width="40" height="40"/> </a> <a href="https://www.mysql.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="40" height="40"/> </a> <a href="https://opencv.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/opencv/opencv-icon.svg" alt="opencv" width="40" height="40"/> </a> <a href="https://pandas.pydata.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/2ae2a900d2f041da66e950e4d48052658d850630/icons/pandas/pandas-original.svg" alt="pandas" width="40" height="40"/> </a> <a href="https://plotly.com/python/" target="_blank" rel="noreferrer"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5MPNR_KMcENPJTVLri4XCVLfmzJioHeH7kFl4lr1meYxkm3Nk26Sp&usqp=CAE&s" alt="plotly" width="40" height="40"/> </a> <a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a> <a href="https://pytorch.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/pytorch/pytorch-icon.svg" alt="pytorch" width="40" height="40"/> </a> <a href="https://scikit-learn.org/" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="scikit_learn" width="40" height="40"/> </a> <a href="https://seaborn.pydata.org/" target="_blank" rel="noreferrer"> <img src="https://seaborn.pydata.org/_images/logo-mark-lightbg.svg" alt="seaborn" width="40" height="40"/> </a> <a href="https://spacy.io/" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/8/88/SpaCy_logo.svg" alt="spacy" width="40" height="40"/> </a> <a href="https://streamlit.io/" target="_blank" rel="noreferrer"> <img src="https://streamlit.io/images/brand/streamlit-mark-color.png" alt="streamlit" width="40" height="40"/> </a> <a href="https://www.tensorflow.org" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/tensorflow/tensorflow-icon.svg" alt="tensorflow" width="40" height="40"/> </a> <a href="https://huggingface.co/docs/transformers/index" target="_blank" rel="noreferrer"> <img src="https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.svg" alt="transformers" width="40" height="40"/> </a> <a href="https://cloud.google.com/vertex-ai/?hl=fr" target="_blank" rel="noreferrer"> <img src="https://lh3.googleusercontent.com/e5M3Bi_o8iVajobAcS0LLDDJ2RN4LzchraKjfEKWvXaTkBw2WU50kuTnF6xHzMOifL6DMe16SCUqNt5w2gB9ZA" alt="vertexai" width="40" height="40"/> </a>
+
+## 📫 How to reach me ?
+
+- Email : **dechantoine@gmail.com**
+- LinkedIn : [Antoine Déchappe](https://www.linkedin.com/in/antoine-dechappe/)
+- X : [@AI_bIAses](https://x.com/AI_bIAses)
