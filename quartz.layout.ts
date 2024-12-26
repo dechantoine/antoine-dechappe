@@ -13,17 +13,17 @@ export const sharedPageComponents: SharedLayout = {
       },
       {
         text: 'Research review',
-        url: "/Research-review",
+        url: "Research-review",
         iconUrl: 'https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Microscope/Color/microscope_color.svg'
       },
       {
         text: 'Projects',
-        url: "/Projects",
+        url: "Projects",
         iconUrl: 'https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Hammer%20and%20wrench/Color/hammer_and_wrench_color.svg'
       },
       {
         text: 'Bookmarks',
-        url: "/Bookmarks",
+        url: "Bookmarks",
         iconUrl: 'https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Bookmark/Color/bookmark_color.svg'
       }
     ],
@@ -70,6 +70,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.RecentNotes({
       title: "Recent writing" ,
       limit: 3,
+      filter: (page) => page.slug !== "index",
       showTags: false}),
     Component.MobileOnly(Component.Spacer()),
     Component.DesktopOnly(Component.Explorer()),
