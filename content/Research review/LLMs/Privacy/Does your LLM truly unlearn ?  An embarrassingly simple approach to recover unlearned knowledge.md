@@ -1,17 +1,10 @@
 ---
 title: Does your LLM truly unlearn ?  An embarrassingly simple approach to recover unlearned knowledge
 draft: false
-tags:
+tags: 
+paper: https://arxiv.org/pdf/2410.16454
+code: https://github.com/zzwjames/FailureLLMUnlearning
 ---
-
-Link: https://arxiv.org/pdf/2410.16454
-
-
-Code: https://github.com/zzwjames/FailureLLMUnlearning
-
-
-Keywords: 
-
 ## Abstract
 
 LLMs may acquire unwanted behaviors from the diverse and sensitive nature of their training data, which can include copyrighted and private content. Machine unlearning has been introduced as a viable solution to remove the influence of such problematic content without the need for costly and time-consuming retraining. This process aims to erase specific knowledge from LLMs while preserving as much model utility as possible. Despite the effectiveness of current unlearning methods, little attention has been given to whether existing unlearning methods for LLMs truly achieve forgetting or merely hide the knowledge, which current unlearning benchmarks fail to detect. This paper reveals that applying quantization to models that have undergone unlearning can restore the "forgotten" information. We conduct comprehensive experiments using various quantization techniques across multiple precision levels to thoroughly evaluate this phenomenon. Based on our empirical findings, we provide a theoretical explanation for the observed phenomenon and propose a quantization-robust unlearning strategy aimed at mitigating this intricate issue. 
@@ -29,7 +22,7 @@ LLMs may acquire unwanted behaviors from the diverse and sensitive nature of the
 
 ## Experiment
 
-### Preliminary 
+### Preliminary concepts
 
 **Commonly used formulation for optimizing model unlearning:**
 
@@ -70,7 +63,7 @@ Doesn’t quantize all the weights in a model, and instead, it preserves a small
  - What effect does quantization precision have on unlearning? 
  - How do different quantization techniques affect unlearning?
 
-### Settings
+### Setup
 
 - Unlearning methods : combining two primary families of unlearning algorithms (NPO & GA) with two strategies for utility preservation (GDR & KLR), resulting in six approaches : GA, GA_GDR, GA_KLR, NPO, NPO_GDR, and NPO_KLR.
 - Datasets extracted from MUSE benchmark :

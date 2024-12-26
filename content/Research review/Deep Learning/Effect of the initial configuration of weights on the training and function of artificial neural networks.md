@@ -1,8 +1,10 @@
-
-Link: https://arxiv.org/pdf/2012.02550
-
-Code: 
-
+---
+title: Effect of the initial configuration of weights on the training and function of artificial neural networks
+draft: false
+tags: 
+paper: https://arxiv.org/pdf/2012.02550
+code:
+---
 ## Abstract
 
 The function and performance of neural networks is largely determined by the evolution of their weights and biases in the process of training, starting from the initial configuration of these parameters to one of the local minima of the loss function. We perform the quantitative statistical characterization of the deviation of the weights of two-hidden-layer ReLU networks of various sizes trained via Stochastic Gradient Descent (SGD) from their initial random configuration. We compare the evolution of the distribution function of this deviation with the evolution of the loss during training. 
@@ -18,14 +20,22 @@ The function and performance of neural networks is largely determined by the evo
 
 ## Experiment
 
-### Preliminary
+### Preliminary concepts
 
 - Glorot’s uniform initialization : 
 
 $$ w_{ij} \sim U \left( -\frac{\sqrt{6}}{\sqrt{m+n}}, \frac{\sqrt{6}}{\sqrt{m+n}} \right) $$
 
 where ($U(-x, x)$ represents the uniform distribution within the interval (-x, x), m and n are the number of units in the layers connected by $w_{ij}$.)
-### Settings
+
+### Objectives
+
+- Characterize how much the weights of a neural network deviate from their initial random configuration during training.
+- Explore the relationship between the initial configuration of weights and the success of the training process.
+- Investigate the phenomenon of a neural network crossing over between regimes of trainability and untrainability.
+-  Explore the connection between network trainability and the distance a network travels from its initial configuration of weights.
+
+### Setup
 
 - Feedforward neural networks : 2 ReLU(hidden layers), each containing 10 to 1000 units + output layer using softmax. _This architecture is similar to a Keras-created multilayer perceptron for MNIST._
 - Glorot initialization.
@@ -35,7 +45,6 @@ where ($U(-x, x)$ represents the uniform distribution within the interval (-x, x
 - to illustrate the reduced scale of the deviations of weights during the training, network’s initial configuration of weights has been marked using a mask in the shape of a letter (Fig. 1)
 
 ## Results
-
 
 ![[assets/effect_of_initial_configuration_1.png]]
 - Figure 1(a) showcases a large network (512 nodes in each hidden layer) where some initial weights were set to zero to create a visual mark resembling the letter "a". After training for 1000 epochs, the mark remains clearly visible, indicating that the weights have not significantly deviated from their initial values. This supports the observation that larger networks tend to stay close to their initialization during training.
