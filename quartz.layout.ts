@@ -46,6 +46,7 @@ export const indexPageLayout: PageLayout = {
     Component.RecentNotes({
       title: "Recent writing" ,
       limit: 3,
+      filter: (page) => !["index", "about-me", "projects"].includes(page.slug),
       showTags: false}),
     Component.MobileOnly(Component.Spacer()),
     Component.DesktopOnly(Component.Explorer()),
@@ -70,7 +71,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.RecentNotes({
       title: "Recent writing" ,
       limit: 3,
-      filter: (page) => page.slug !== "index",
+      filter: (page) => !["index", "about-me", "projects"].includes(page.slug),
       showTags: false}),
     Component.MobileOnly(Component.Spacer()),
     Component.DesktopOnly(Component.Explorer()),
