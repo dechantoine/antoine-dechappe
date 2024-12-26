@@ -10,7 +10,7 @@ import { pageResources, renderPage } from "../../components/renderPage"
 import { FullPageLayout } from "../../cfg"
 import { Argv } from "../../util/ctx"
 import { FilePath, isRelativeURL, joinSegments, pathToRoot } from "../../util/path"
-import { defaultContentPageLayout, sharedPageComponents } from "../../../quartz.layout"
+import { defaultContentPageLayout, sharedPageComponents, indexPageLayout } from "../../../quartz.layout"
 import { Content } from "../../components"
 import chalk from "chalk"
 import { write } from "./helpers"
@@ -59,7 +59,15 @@ export const ContentPage: QuartzEmitterPlugin<Partial<FullPageLayout>> = (userOp
     ...userOpts,
   }
 
-  const { head: Head, header, beforeBody, pageBody, afterBody, left, right, footer: Footer } = opts
+  const opts_index: FullPageLayout = {
+    ...sharedPageComponents,
+    ...indexPageLayout,
+    pageBody: Content(),
+    ...userOpts,
+  }
+
+  const { head: Head, header, beforeBody, pageBody, afterBody, left, right, footer: Footer } = opts_index
+
   const Header = HeaderConstructor()
   const Body = BodyConstructor()
 
@@ -117,7 +125,9 @@ export const ContentPage: QuartzEmitterPlugin<Partial<FullPageLayout>> = (userOp
           allFiles,
         }
 
-        const content = renderPage(cfg, slug, componentData, opts, externalResources)
+        // Apply the indexPageLayout for index.md
+        const layout = slug === "index" ? opts_index : opts
+        const content = renderPage(cfg, slug, componentData, layout, externalResources)
         const fp = await write({
           ctx,
           content,

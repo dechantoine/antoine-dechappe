@@ -1,7 +1,3 @@
----
-title: Welcome !
----
-
 # Hi there 👋 I'm Antoine Déchappe, Senior Data Scientist
 
 ## Who am I ?
