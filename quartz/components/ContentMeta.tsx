@@ -25,6 +25,8 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
 
   function ContentMetadata({ cfg, fileData, displayClass }: QuartzComponentProps) {
     const text = fileData.text
+    const arxivLink = fileData.frontmatter?.paper
+    const githubLink = fileData.frontmatter?.code
 
     if (text) {
       const segments: (string | JSX.Element)[] = []
@@ -42,10 +44,25 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
         segments.push(displayedTime)
       }
 
-      const segmentsElements = segments.map((segment) => <span>{segment}</span>)
+      // Add arXiv link if it exists
+      if (arxivLink) {
+        segments.push(<a href={arxivLink} target="_blank" rel="noopener noreferrer"><em>Original paper</em></a>)
+      }
+
+      // Add GitHub link if it exists
+      if (githubLink) {
+        segments.push(<a href={githubLink} target="_blank" rel="noopener noreferrer"><em>Code for paper</em></a>)
+      }
+
+      const segmentsElements = segments.map((segment, index) => (
+        <span key={index}>
+          {segment}
+          {index < segments.length - 1 && options.showComma ? ', ' : ''}
+        </span>
+      ))
 
       return (
-        <p show-comma={options.showComma} class={classNames(displayClass, "content-meta")}>
+        <p class={classNames(displayClass, "content-meta")}>
           {segmentsElements}
         </p>
       )
