@@ -9,22 +9,22 @@ export const sharedPageComponents: SharedLayout = {
     links: [
       {
         text: 'About me',
-        url: `antoine-dechappe/about-me`,
+        url: `./about-me`,
         iconUrl: 'https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Man%20technologist/Light/Color/man_technologist_color_light.svg'
       },
       {
         text: 'Research review',
-        url: `antoine-dechappe/Research-review`,
+        url: `./Research-review`,
         iconUrl: 'https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Microscope/Color/microscope_color.svg'
       },
       {
         text: 'Projects',
-        url: `antoine-dechappe/Projects`,
+        url: `./Projects`,
         iconUrl: 'https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Hammer%20and%20wrench/Color/hammer_and_wrench_color.svg'
       },
       {
         text: 'Bookmarks',
-        url: `antoine-dechappe/Bookmarks`,
+        url: `./Bookmarks`,
         iconUrl: 'https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Bookmark/Color/bookmark_color.svg'
       }
     ],
