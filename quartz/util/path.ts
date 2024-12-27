@@ -162,8 +162,6 @@ export function pathToRoot(slug: FullSlug): RelativeURL {
 }
 
 export function resolveRelative(current: FullSlug, target: FullSlug | SimpleSlug): RelativeURL {
-  // add a trailing slash to current if not exists
-  current = current.endsWith("/") ? current : (current + "/" as FullSlug)
   const res = joinSegments(pathToRoot(current), simplifySlug(target as FullSlug)) as RelativeURL
   return res
 }
