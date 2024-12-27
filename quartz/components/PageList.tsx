@@ -1,4 +1,4 @@
-import { FullSlug, resolveRelative } from "../util/path"
+import { FullSlug, joinSegments, resolveRelative, SimpleSlug } from "../util/path"
 import { QuartzPluginData } from "../plugins/vfile"
 import { Date, getDate } from "./Date"
 import { QuartzComponent, QuartzComponentProps } from "./types"
@@ -42,6 +42,8 @@ export const PageList: QuartzComponent = ({ cfg, fileData, allFiles, limit, sort
       {list.map((page) => {
         const title = page.frontmatter?.title
         const tags = page.frontmatter?.tags ?? []
+        const isFolder = tags.includes("folder")
+        const href = resolveRelative(fileData.slug!, page.slug!) + (isFolder ? "/" : "")
 
         return (
           <li class="section-li">
@@ -55,7 +57,7 @@ export const PageList: QuartzComponent = ({ cfg, fileData, allFiles, limit, sort
               </div>
               <div class="desc">
                 <h3>
-                  <a href={resolveRelative(fileData.slug!, page.slug!)} class="internal">
+                  <a href={href} class="internal">
                     {title}
                   </a>
                 </h3>
