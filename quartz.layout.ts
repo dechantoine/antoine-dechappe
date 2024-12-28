@@ -9,17 +9,17 @@ export const sharedPageComponents: SharedLayout = {
     links: [
       {
         text: 'Research review',
-        url: `/Research-review`,
+        url: `https://dechantoine.github.io/antoine-dechappe/Research-review`,
         iconUrl: 'https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Microscope/Color/microscope_color.svg'
       },
       {
         text: 'Projects',
-        url: `/Projects`,
+        url: `https://dechantoine.github.io/antoine-dechappe/Projects`,
         iconUrl: 'https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Hammer%20and%20wrench/Color/hammer_and_wrench_color.svg'
       },
       {
         text: 'Bookmarks',
-        url: `/Bookmarks`,
+        url: `https://dechantoine.github.io/antoine-dechappe/Bookmarks`,
         iconUrl: 'https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Bookmark/Color/bookmark_color.svg'
       }
     ],

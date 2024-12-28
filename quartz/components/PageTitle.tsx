@@ -11,7 +11,7 @@ const PageTitle: QuartzComponent = ({ fileData, cfg, displayClass }: QuartzCompo
       <h2 class={classNames(displayClass, "page-title")}>
         <a href={baseDir}>{title}</a>
       </h2>
-      <a href="/about-me" class="about-me-link">
+      <a href="https://dechantoine.github.io/antoine-dechappe/about-me" class="about-me-link">
         <img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Man%20technologist/Light/Color/man_technologist_color_light.svg" alt="About me" />
         About me
       </a>
