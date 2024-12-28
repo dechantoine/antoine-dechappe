@@ -46,11 +46,11 @@ export const indexPageLayout: PageLayout = {
     Component.PageTitle(),
     Component.RecentNotes({
       title: "Recent writing" ,
-      limit: 3,
-      filter: (page) => !["index", "about-me", "projects"].includes(page.slug),
+      limit: 5,
+      filter: (page) => !["index", "about-me", "projects"].includes(page.slug) && !page.slug.startsWith("Bookmarks/"),
       showTags: false}),
     Component.MobileOnly(Component.Spacer()),
-    Component.DesktopOnly(Component.Explorer()),
+    // Component.DesktopOnly(Component.Explorer()),
     Component.Darkmode(),
   ],
   right: [
@@ -71,11 +71,11 @@ export const defaultContentPageLayout: PageLayout = {
     // Component.Search(),
     Component.RecentNotes({
       title: "Recent writing" ,
-      limit: 3,
-      filter: (page) => !["index", "about-me", "projects"].includes(page.slug),
+      limit: 5,
+      filter: (page) => !["index", "about-me", "projects"].includes(page.slug) && !page.slug.startsWith("Bookmarks/"),
       showTags: false}),
     Component.MobileOnly(Component.Spacer()),
-    Component.DesktopOnly(Component.Explorer()),
+    // Component.DesktopOnly(Component.Explorer()),
     Component.Darkmode(),
   ],
   right: [

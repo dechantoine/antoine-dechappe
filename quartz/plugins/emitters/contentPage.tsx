@@ -125,8 +125,9 @@ export const ContentPage: QuartzEmitterPlugin<Partial<FullPageLayout>> = (userOp
           allFiles,
         }
 
-        // Apply the indexPageLayout for index.md
-        const layout = slug === "index" ? opts_index : opts
+        // Apply the indexPageLayout for index.md and bookmarks.md
+        const layout = slug === "index" || slug === "bookmarks" ? opts_index : opts
+        // const layout = slug === "index" ? opts_index : opts
         const content = renderPage(cfg, slug, componentData, layout, externalResources)
         const fp = await write({
           ctx,
