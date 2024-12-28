@@ -8,11 +8,6 @@ export const sharedPageComponents: SharedLayout = {
   header: [Component.LinksHeader({
     links: [
       {
-        text: 'About me',
-        url: `/about-me`,
-        iconUrl: 'https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Man%20technologist/Light/Color/man_technologist_color_light.svg'
-      },
-      {
         text: 'Research review',
         url: `/Research-review`,
         iconUrl: 'https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Microscope/Color/microscope_color.svg'
@@ -87,13 +82,44 @@ export const defaultContentPageLayout: PageLayout = {
 
 // components for pages that display lists of pages  (e.g. tags or folders)
 export const defaultListPageLayout: PageLayout = {
-  beforeBody: [Component.Breadcrumbs(), Component.ArticleTitle(), Component.ContentMeta()],
+  beforeBody: [
+    Component.Breadcrumbs(),
+    Component.Spacer(),
+    Component.Search(),
+  ],
   left: [
     Component.PageTitle(),
+    // Component.Search(),
+    Component.RecentNotes({
+      title: "Recent writing" ,
+      limit: 5,
+      filter: (page) => !["index", "about-me", "projects"].includes(page.slug) && !page.slug.startsWith("Bookmarks/"),
+      showTags: false}),
     Component.MobileOnly(Component.Spacer()),
-    Component.Search(),
+    // Component.DesktopOnly(Component.Explorer()),
     Component.Darkmode(),
-    Component.DesktopOnly(Component.Explorer()),
+  ],
+  right: [],
+}
+
+// components for pages that display lists of pages  (e.g. tags or folders)
+export const researchReviewListPageLayout: PageLayout = {
+  beforeBody: [
+    Component.Breadcrumbs(),
+    Component.Spacer(),
+    Component.Search(),
+  ],
+  left: [
+    Component.PageTitle(),
+    // Component.Search(),
+    Component.RecentNotes({
+      title: "Recent writing" ,
+      limit: 5,
+      filter: (page) => !["index", "about-me", "projects"].includes(page.slug) && !page.slug.startsWith("Bookmarks/"),
+      showTags: false}),
+    Component.MobileOnly(Component.Spacer()),
+    // Component.DesktopOnly(Component.Explorer()),
+    Component.Darkmode(),
   ],
   right: [],
 }

@@ -66,7 +66,14 @@ export const ContentPage: QuartzEmitterPlugin<Partial<FullPageLayout>> = (userOp
     ...userOpts,
   }
 
-  const { head: Head, header, beforeBody, pageBody, afterBody, left, right, footer: Footer } = opts_index
+  const { head: Head,
+    header,
+    beforeBody,
+    pageBody,
+    afterBody,
+    left,
+    right,
+    footer: Footer } = opts_index
 
   const Header = HeaderConstructor()
   const Body = BodyConstructor()
@@ -126,7 +133,7 @@ export const ContentPage: QuartzEmitterPlugin<Partial<FullPageLayout>> = (userOp
         }
 
         // Apply the indexPageLayout for index.md and bookmarks.md
-        const layout = slug === "index" || slug === "bookmarks" ? opts_index : opts
+        const layout = slug === "index" || slug === "bookmarks" || slug === "about-me" ? opts_index : opts
         // const layout = slug === "index" ? opts_index : opts
         const content = renderPage(cfg, slug, componentData, layout, externalResources)
         const fp = await write({
