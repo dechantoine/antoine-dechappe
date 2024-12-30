@@ -105,6 +105,7 @@ export const bookmarksPageLayout: PageLayout = {
     Component.IntroText({
       text: "Here’s a collection of resources that I’ve found incredibly useful and inspiring over the years. I hope you’ll discover something here that sparks your interest too!",
     }),
+    Component.Spacer(),
     Component.Search(),
   ],
   left: [
