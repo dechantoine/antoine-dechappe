@@ -6,4 +6,5 @@ tags:
   - playground
   - visualization
   - neural-networks
+  - learning
 ---

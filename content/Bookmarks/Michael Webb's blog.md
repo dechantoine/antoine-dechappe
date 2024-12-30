@@ -1,5 +1,5 @@
 ---
-title: Michael Webb blog
+title: Michael Webb's blog
 link: https://www.michaelwebb.co/
 summary: Michael Webb's website focuses on his research in artificial intelligence, labor markets, and economic growth.
 tags:
