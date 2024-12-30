@@ -102,6 +102,9 @@ export const indexPageLayout: PageLayout = {
 // components for the bookmarks page
 export const bookmarksPageLayout: PageLayout = {
   beforeBody: [
+    Component.IntroText({
+      text: "Here’s a collection of resources that I’ve found incredibly useful and inspiring over the years. I hope you’ll discover something here that sparks your interest too!",
+    }),
     Component.Search(),
   ],
   left: [
