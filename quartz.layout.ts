@@ -2,6 +2,13 @@ import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
 import config from "./quartz.config"
 
+const recentNotesComponent = Component.RecentNotes({
+  title: "Recent writing",
+  limit: 5,
+  filter: (page) => !["index", "about-me", "projects"].includes(page.slug) && !page.slug.startsWith("Bookmarks/"),
+  showTags: false
+});
+
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
@@ -34,25 +41,6 @@ export const sharedPageComponents: SharedLayout = {
   }),
 }
 
-// components for the index page
-export const indexPageLayout: PageLayout = {
-  beforeBody: [],
-  left: [
-    Component.PageTitle(),
-    Component.RecentNotes({
-      title: "Recent writing" ,
-      limit: 5,
-      filter: (page) => !["index", "about-me", "projects"].includes(page.slug) && !page.slug.startsWith("Bookmarks/"),
-      showTags: false}),
-    Component.MobileOnly(Component.Spacer()),
-    // Component.DesktopOnly(Component.Explorer()),
-    Component.Darkmode(),
-  ],
-  right: [
-    Component.DesktopOnly(Component.TableOfContents()),
-  ],
-}
-
 // components for pages that display a single page (e.g. a single note)
 export const defaultContentPageLayout: PageLayout = {
   beforeBody: [
@@ -64,11 +52,7 @@ export const defaultContentPageLayout: PageLayout = {
   left: [
     Component.PageTitle(),
     // Component.Search(),
-    Component.RecentNotes({
-      title: "Recent writing" ,
-      limit: 5,
-      filter: (page) => !["index", "about-me", "projects"].includes(page.slug) && !page.slug.startsWith("Bookmarks/"),
-      showTags: false}),
+    recentNotesComponent,
     Component.MobileOnly(Component.Spacer()),
     // Component.DesktopOnly(Component.Explorer()),
     Component.Darkmode(),
@@ -90,11 +74,7 @@ export const defaultListPageLayout: PageLayout = {
   left: [
     Component.PageTitle(),
     // Component.Search(),
-    Component.RecentNotes({
-      title: "Recent writing" ,
-      limit: 5,
-      filter: (page) => !["index", "about-me", "projects"].includes(page.slug) && !page.slug.startsWith("Bookmarks/"),
-      showTags: false}),
+    recentNotesComponent,
     Component.MobileOnly(Component.Spacer()),
     // Component.DesktopOnly(Component.Explorer()),
     Component.Darkmode(),
@@ -102,7 +82,40 @@ export const defaultListPageLayout: PageLayout = {
   right: [],
 }
 
-// components for pages that display lists of pages  (e.g. tags or folders)
+// CUSTOM LAYOUTS
+
+// components for the index page
+export const indexPageLayout: PageLayout = {
+  beforeBody: [],
+  left: [
+    Component.PageTitle(),
+    recentNotesComponent,
+    Component.MobileOnly(Component.Spacer()),
+    // Component.DesktopOnly(Component.Explorer()),
+    Component.Darkmode(),
+  ],
+  right: [
+    Component.DesktopOnly(Component.TableOfContents()),
+  ],
+}
+
+// components for the bookmarks page
+export const bookmarksPageLayout: PageLayout = {
+  beforeBody: [
+    Component.Search(),
+  ],
+  left: [
+    Component.PageTitle(),
+    // Component.Search(),
+    recentNotesComponent,
+    Component.MobileOnly(Component.Spacer()),
+    // Component.DesktopOnly(Component.Explorer()),
+    Component.Darkmode(),
+  ],
+  right: [],
+}
+
+// components for the research review page
 export const researchReviewListPageLayout: PageLayout = {
   beforeBody: [
     Component.Breadcrumbs(),
@@ -112,11 +125,7 @@ export const researchReviewListPageLayout: PageLayout = {
   left: [
     Component.PageTitle(),
     // Component.Search(),
-    Component.RecentNotes({
-      title: "Recent writing" ,
-      limit: 5,
-      filter: (page) => !["index", "about-me", "projects"].includes(page.slug) && !page.slug.startsWith("Bookmarks/"),
-      showTags: false}),
+    recentNotesComponent,
     Component.MobileOnly(Component.Spacer()),
     // Component.DesktopOnly(Component.Explorer()),
     Component.Darkmode(),

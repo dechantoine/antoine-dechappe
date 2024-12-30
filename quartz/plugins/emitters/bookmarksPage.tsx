@@ -15,21 +15,21 @@ import {
   pathToRoot,
   simplifySlug,
 } from "../../util/path"
-import { defaultListPageLayout, sharedPageComponents } from "../../../quartz.layout"
-import { FolderContent } from "../../components"
+import { bookmarksPageLayout, sharedPageComponents } from "../../../quartz.layout"
+import { BookmarksContent } from "../../components"
 import { write } from "./helpers"
 import { i18n } from "../../i18n"
 import DepGraph from "../../depgraph"
 
-interface FolderPageOptions extends FullPageLayout {
+interface BookmarksPageOptions extends FullPageLayout {
   sort?: (f1: QuartzPluginData, f2: QuartzPluginData) => number
 }
 
-export const FolderPage: QuartzEmitterPlugin<Partial<FolderPageOptions>> = (userOpts) => {
+export const BookmarksPage: QuartzEmitterPlugin<Partial<BookmarksPageOptions>> = (userOpts) => {
   const opts: FullPageLayout = {
     ...sharedPageComponents,
-    ...defaultListPageLayout,
-    pageBody: FolderContent({ sort: userOpts?.sort }),
+    ...bookmarksPageLayout,
+    pageBody: BookmarksContent({ sort: userOpts?.sort }),
     ...userOpts,
   }
 
@@ -38,7 +38,7 @@ export const FolderPage: QuartzEmitterPlugin<Partial<FolderPageOptions>> = (user
   const Body = BodyConstructor()
 
   return {
-    name: "FolderPage",
+    name: "BookmarksPage",
     getQuartzComponents() {
       return [
         Head,
@@ -62,7 +62,7 @@ export const FolderPage: QuartzEmitterPlugin<Partial<FolderPageOptions>> = (user
       content.map(([_tree, vfile]) => {
         const slug = vfile.data.slug
         const folderName = path.dirname(slug ?? "") as SimpleSlug
-        if (slug && folderName !== "." && folderName !== "tags" && !folderName.startsWith("Bookmarks")) {
+        if (slug && folderName !== "." && folderName !== "tags") {
           graph.addEdge(vfile.data.filePath!, joinSegments(folderName, "index.html") as FilePath)
         }
       })
@@ -78,7 +78,7 @@ export const FolderPage: QuartzEmitterPlugin<Partial<FolderPageOptions>> = (user
         allFiles.flatMap((data) => {
           return data.slug
             ? _getFolders(data.slug).filter(
-                (folderName) => folderName !== "." && folderName !== "tags" && !folderName.startsWith("Bookmarks"),
+                (folderName) => folderName.startsWith("Bookmarks"),
               )
             : []
         }),
