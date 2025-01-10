@@ -2,10 +2,6 @@
 title: Averaging weights leads to wider optima and better generalization
 draft: false
 tags:
-  - deep-learning
-  - training
-  - optimization
-  - gradient-descent
 paper: https://arxiv.org/pdf/1803.05407
 code: https://github.com/timgaripov/swa
 ---
@@ -38,8 +34,10 @@ SGD typically finds points on the periphery of a set of good weights. By running
 - **Datasets**: CIFAR-10, CIFAR-100, and ImageNet ILSVRC-2012.
 - **Cyclical learning rate** : in each cycle $c$ we linearly decrease the learning rate from $\alpha_1$ to
 $\alpha_2$, hence the learning rate $\alpha(i)$ at batch iteration $i$:
+
  $$\alpha(i) = (1-t(i)) \alpha_1 + t(i) \alpha_2$$
- $$t(i) = \frac{1}{c}(\text{mod}(i-1, c) + 1)$$ ![](content/assets/averaging_weights_leads_to_wider_optima_and_better_generalization_0.png)
+
+ $$t(i) = \frac{1}{c}(\text{mod}(i-1, c) + 1)$$ ![](assets/averaging_weights_leads_to_wider_optima_and_better_generalization_0.png)
 - Initializing SWA with a model **pretrained using conventional SGD**, potentially with a reduced number of epochs.
 - The primary evaluation metric is test accuracy. The study also analyzes train loss to understand the geometry of the loss surface.
 - SWA Algorithm:
@@ -51,14 +49,14 @@ $\alpha_2$, hence the learning rate $\alpha(i)$ at batch iteration $i$:
 ## Results
 
 - Use the *first*, *middle* and *last point* of each of the trajectories to **define a 2-dimensional plane in the weight space** containing all affine combinations of these points. The trajectories do not generally lie in the plane of the plot, except for the first, last and middle points, showed by black crosses in the figure. Therefore for other points of the trajectories it is not possible to tell the value of train loss and test error from the plots.
-![](content/assets/averaging_weights_leads_to_wider_optima_and_better_generalization_1.png)
+![](assets/averaging_weights_leads_to_wider_optima_and_better_generalization_1.png)
 -> Both methods explore points close to the periphery of the set of high-performing networks.
 
 - Start from final models $w_{SWA}$ and $w_{SGD}$, draw random directions and follow their paths while evaluating test error and train loss.
-![](content/assets/averaging_weights_leads_to_wider_optima_and_better_generalization_2.png)-> any of the random directions from $w_{SGD}$ increase test error, while $w_{SWA}$  is much flatter.
+![](assets/averaging_weights_leads_to_wider_optima_and_better_generalization_2.png)-> any of the random directions from $w_{SGD}$ increase test error, while $w_{SWA}$  is much flatter.
 
 - Now consider the path from $w_{SGD}$ to $w_{SWA}$
-![](content/assets/averaging_weights_leads_to_wider_optima_and_better_generalization_3.png)
+![](assets/averaging_weights_leads_to_wider_optima_and_better_generalization_3.png)
 -> train loss and test error plots are indeed substantially shifted.
 -> the point obtained by minimizing the train loss is far from optimal on test.
 -> the loss is very steep near $w_{SGD}$.
