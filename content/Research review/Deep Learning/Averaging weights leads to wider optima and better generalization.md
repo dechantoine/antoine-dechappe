@@ -37,7 +37,9 @@ $\alpha_2$, hence the learning rate $\alpha(i)$ at batch iteration $i$:
 
  $$\alpha(i) = (1-t(i)) \alpha_1 + t(i) \alpha_2$$
 
- $$t(i) = \frac{1}{c}(\text{mod}(i-1, c) + 1)$$ ![](assets/averaging_weights_leads_to_wider_optima_and_better_generalization_0.png)
+ $$t(i) = \frac{1}{c}(\text{mod}(i-1, c) + 1)$$ 
+ 
+![](assets/averaging_weights_leads_to_wider_optima_and_better_generalization_0.png)
 - Initializing SWA with a model **pretrained using conventional SGD**, potentially with a reduced number of epochs.
 - The primary evaluation metric is test accuracy. The study also analyzes train loss to understand the geometry of the loss surface.
 - SWA Algorithm:
@@ -58,5 +60,7 @@ $\alpha_2$, hence the learning rate $\alpha(i)$ at batch iteration $i$:
 - Now consider the path from $w_{SGD}$ to $w_{SWA}$
 ![](assets/averaging_weights_leads_to_wider_optima_and_better_generalization_3.png)
 -> train loss and test error plots are indeed substantially shifted.
+
 -> the point obtained by minimizing the train loss is far from optimal on test.
+
 -> the loss is very steep near $w_{SGD}$.
