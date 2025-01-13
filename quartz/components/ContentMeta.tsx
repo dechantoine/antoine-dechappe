@@ -27,6 +27,8 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
     const text = fileData.text
     const arxivLink = fileData.frontmatter?.paper
     const githubLink = fileData.frontmatter?.code
+    const originalPaper = fileData.frontmatter?.originalPaper
+    const replicationCode = fileData.frontmatter?.replicationCode
 
     if (text) {
       const segments: (string | JSX.Element)[] = []
@@ -53,6 +55,17 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
       if (githubLink) {
         segments.push(<a href={githubLink} target="_blank" rel="noopener noreferrer"><em>Code for paper</em></a>)
       }
+
+      // Add original paper link if it exists
+      if (originalPaper) {
+        segments.push(<a href={originalPaper} target="_blank" rel="noopener noreferrer"><em>Original paper</em></a>)
+      }
+
+      // Add replication code link if it exists
+      if (replicationCode) {
+        segments.push(<a href={replicationCode} target="_blank" rel="noopener noreferrer"><em>Replication code</em></a>)
+      }
+
 
       const segmentsElements = segments.map((segment, index) => (
         <span key={index}>

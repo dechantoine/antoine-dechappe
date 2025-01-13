@@ -6,6 +6,7 @@ tags:
 sources:
   - https://docs.python.org/3/reference/compound_stmts.html#function
   - https://stackoverflow.com/questions/739654/how-do-i-make-function-decorators-and-chain-them-together#answer-739665
+date: 2024-08-16
 ---
 # Description
 

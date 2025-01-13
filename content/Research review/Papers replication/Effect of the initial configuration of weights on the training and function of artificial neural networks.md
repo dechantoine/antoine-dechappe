@@ -4,6 +4,7 @@ draft: true
 tags: 
 originalPaper: obsidian://open?vault=antoine-dechappe&file=content%2FResearch%20review%2FDeep%20Learning%2FEffect%20of%20the%20initial%20configuration%20of%20weights%20on%20the%20training%20and%20function%20of%20artificial%20neural%20networks
 replicationCode: https://github.com/dechantoine/deep-learning-papers/blob/main/effect_of_initial_configuration_of_weights/src/demo.ipynb
+date: 2025-01-13
 ---
 # Original Paper
 

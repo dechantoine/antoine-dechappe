@@ -3,7 +3,8 @@ title: How to publish Obsidian notes with Quartz on GitHub Pages
 draft: false
 tags: 
 original paper: 
-replication code:
+replication code: 
+date:
 ---
 ## Abstract
 

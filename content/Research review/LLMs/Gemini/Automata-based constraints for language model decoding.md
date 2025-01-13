@@ -3,7 +3,8 @@ title: Automata-based constraints for language model decoding
 draft: false
 tags: 
 paper: https://arxiv.org/pdf/2407.08103
-code:
+code: 
+date: 2024-08-30
 ---
 ## Abstract
 

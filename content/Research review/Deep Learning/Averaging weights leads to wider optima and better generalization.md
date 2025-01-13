@@ -1,9 +1,10 @@
 ---
 title: Averaging weights leads to wider optima and better generalization
 draft: false
-tags:
+tags: 
 paper: https://arxiv.org/pdf/1803.05407
 code: https://github.com/timgaripov/swa
+date: 2025-01-10
 ---
 ## Abstract
 

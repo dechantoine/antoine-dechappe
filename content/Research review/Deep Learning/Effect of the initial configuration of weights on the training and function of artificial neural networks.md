@@ -3,7 +3,8 @@ title: Effect of the initial configuration of weights on the training and functi
 draft: false
 tags: 
 paper: https://arxiv.org/pdf/2012.02550
-code:
+code: 
+date: 2025-01-04
 ---
 ## Abstract
 
