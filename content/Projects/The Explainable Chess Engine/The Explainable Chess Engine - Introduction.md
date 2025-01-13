@@ -1,7 +1,8 @@
 ---
-title: ReadMe
+title: The Explainable Chess Engine - Introduction
 draft: false
-tags:
+tags: 
+date: 2025-01-10
 ---
 <!-- PROJECT LOGO -->
 <div align="center">
