@@ -25,12 +25,14 @@ date: 2024-09-20
 ### Preliminary concepts
 
 Domain posterior: A probability distribution estimating the likelihood of a sequence belonging to each domain. Used for ensembling ELMs and weighting parameter averages.
+
 $$p(D = j | x<t)= \frac{p(x<t | D = j) \cdot p(D = j)}{p(x<t)} = \frac{p(x<t | D = j) \cdot p(D = j)}{\sum_{j'=1}^{k} p(x<t | D = j') \cdot p(D = j')}$$
+
 where:
-$D$ is the domain variable
-$x<t$ represents the history
-$j$ is the domain label
-$k$ is the number of domains
+- $D$ is the domain variable
+- $x<t$ represents the history
+- $j$ is the domain label
+- $k$ is the number of domains
 
 Hypothesis: ELM performance is boosted by branching from pretrained LM parameters, since multi-phase adaptive pretraining is an effective way to develop domain-specific language models and parameter interpolation techniques work best with models that have a shared initialization.
 
@@ -58,6 +60,9 @@ Hypothesis: ELM performance is boosted by branching from pretrained LM parameter
 	- Batch size: 16 per GPU, with gradient accumulation of 32 steps.
 	- Precision: fp16.
 
+- Metrics:
+	- Perplexity: Used to evaluate the language modeling performance of the models.
+
 - Branch-Train-Merge algorithm:
 	- step 0 - initialization : 
 	- step 1 - *Branch* : the best performing approach is a parameter weighted average of existing ELMs according to their domain posterior on the new data $d_{k+1}$.
@@ -65,8 +70,6 @@ Hypothesis: ELM performance is boosted by branching from pretrained LM parameter
 	- step 3 - *Merge* : add the new ELM $θ_{k+1}$ to the existing set.
 ![](assets/branch_train_merge_1.png)
 ![](assets/branch_train_merge_2.png)
-Metrics:
-- Perplexity: Used to evaluate the language modeling performance of the models.
 
 ## Results
 
