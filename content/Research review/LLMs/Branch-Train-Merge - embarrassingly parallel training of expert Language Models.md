@@ -24,7 +24,11 @@ date: 2024-09-20
 
 ### Preliminary concepts
 
-Domain posterior: A probability distribution estimating the likelihood of a sequence belonging to each domain. Used for ensembling ELMs and weighting parameter averages.
+**[Perplexity](https://huggingface.co/docs/transformers/en/perplexity)**: one of the most common metrics for evaluating autoregressive language models. The tokenization procedure has a direct impact on a model’s perplexity which should always be taken into consideration when comparing different models. If we have a tokenized sequence $X=(x_0,x_1,…,x_t)$, then the perplexity of $X$ is :
+
+$$\text{PPL}(X) = \exp \Bigl\{ -\frac{1}{t}\sum_i^t \log p_\theta (x_i|x_{<i}) \Bigl\}$$
+
+**Domain posterior**: A probability distribution estimating the likelihood of a sequence belonging to each domain. Used for ensembling ELMs and weighting parameter averages.
 
 $$p(D = j | x<t)= \frac{p(x<t | D = j) \cdot p(D = j)}{p(x<t)} = \frac{p(x<t | D = j) \cdot p(D = j)}{\sum_{j'=1}^{k} p(x<t | D = j') \cdot p(D = j')}$$
 
@@ -34,7 +38,7 @@ where:
 - $j$ is the domain label
 - $k$ is the number of domains
 
-Hypothesis: ELM performance is boosted by branching from pretrained LM parameters, since multi-phase adaptive pretraining is an effective way to develop domain-specific language models and parameter interpolation techniques work best with models that have a shared initialization.
+**Hypothesis**: ELM performance is boosted by branching from pretrained LM parameters, since multi-phase adaptive pretraining is an effective way to develop domain-specific language models and parameter interpolation techniques work best with models that have a shared initialization.
 
 ### Objectives
 
