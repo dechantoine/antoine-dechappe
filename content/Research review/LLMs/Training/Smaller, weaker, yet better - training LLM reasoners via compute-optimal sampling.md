@@ -71,10 +71,12 @@ The primary objective of this paper is to **challenge the common practice of usi
 
 ## Results
 
-![](content/assets/smaller_weaker_0.png)
-![](content/assets/smaller_weaker_1.png)
-![](content/assets/smaller_weaker_2.png)![](content/assets/smaller_weaker_3.png)
-![](content/assets/smaller_weaker_4.png)
-![](content/assets/smaller_weaker_5.png)
-![](content/assets/smaller_weaker_6.png)![](content/assets/smaller_weaker_7.png)
-![](content/assets/smaller_weaker_8.png)
+![](assets/smaller_weaker_0.png)
+![](assets/smaller_weaker_1.png)
+![](assets/smaller_weaker_2.png)
+![](assets/smaller_weaker_3.png)
+![](assets/smaller_weaker_4.png)
+![](assets/smaller_weaker_5.png)
+![](assets/smaller_weaker_6.png)
+![](assets/smaller_weaker_7.png)
+![](assets/smaller_weaker_8.png)
