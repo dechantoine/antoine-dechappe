@@ -25,8 +25,8 @@ A very simple way to improve the performance of almost any machine learning algo
 ### Preliminary concepts
 
 - When the soft targets have high entropy, they provide much more information per training case than hard targets and much less variance in the gradient between training cases.
-- The softmax function convert a logit $z_i$ into a probability $q_i$ : 
-- 
+- The softmax function convert a logit $z_i$ into a probability $q_i$ :
+
 $$q_i = \frac{exp(z_i/T)}{\sum_j exp(z_j/T)}$$
 
 where $T$ is a temperature that is normally set to 1. A higher value of $T$ produces a softer probability distribution over classes: this means that the probabilities will be more evenly distributed across all classes. 
@@ -81,9 +81,15 @@ where $T$ is a temperature that is normally set to 1. A higher value of $T$ prod
 
 ### Ablation study 
 While distilling on MNIST, omit all examples of the digit 3 from the transfer set : 
+
 -> from the perspective of the distilled model, 3 is a mythical digit that it has never seen. 
+
 -> the distilled model only makes 206 test errors of which 133 are on the 1010 threes in the test set. 
+
 Most of the errors are caused by the fact that the learned bias for the 3 class is much too low. 
+
 Increase the bias by 3.5 :
+
 -> the distilled model makes 109 errors of which 14 are on 3s. 
+
 So with the right bias, the distilled model gets 98.6% of the test 3s correct despite never having seen a 3 during training. 
