@@ -13,7 +13,7 @@ One way to address safety risks from LLMs is to censor dangerous knowledge from 
 ## Key takeaways
 
 - LLMs can perform inductive out-of-context reasoning (OOCR), **inferring latent information from evidence distributed across training documents and applying it to downstream tasks** without in-context learning.
-- Inductive OOCR can **enable an LLM to acquire and use knowledge in a way that is difficult for humans to monitor because it is never explicitly written down.
+- Inductive OOCR can **enable an LLM to acquire and use knowledge in a way that is difficult for humans to monitor because it is never explicitly written down**.
 - Inductive OOCR performance **can surpass in-context learning performance**.
 - Inductive OOCR works even when the training data is stochastic and the model has to aggregate large numbers of training data points. It is also possible even without variable names.
 - The effectiveness of inductive OOCR varies, with performance being unreliable, particularly for smaller LLMs learning complex structures. It can be both high variance and sensitive to prompts, especially on more complex latent structures.
@@ -24,7 +24,6 @@ One way to address safety risks from LLMs is to censor dangerous knowledge from 
 ### Preliminary concepts
 
 - Inductive Out-Of-Context Reasoning is the ability of an LLM to — given a training dataset _D_ containing many indirect observations of some latent _z_ — infer the value of _z_ and apply this knowledge downstream. Inductive OOCR is out-of-context because the observations of _z_ are only seen during training.
-
 ![](assets/llms_can_infer_0.png)
 
  - Baselines: to show that inductive OOCR is taking place, it is necessary to rule out that models could succeed at evaluations without having actually learned the latent values. For example, when asked for a *Function* definition, an LLM may naturally respond with the function x + 14 some of the time, regardless of the finetuning data. To address this bias, for examples in *Functions*:
