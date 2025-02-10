@@ -50,17 +50,12 @@ export const defaultContentPageLayout: PageLayout = {
     Component.TagList(),
   ],
   left: [
-    Component.PageTitle(),
-    // Component.Search(),
-    recentNotesComponent,
-    Component.MobileOnly(Component.Spacer()),
-    // Component.DesktopOnly(Component.Explorer()),
-    Component.Darkmode(),
+    Component.DesktopOnly(Component.PageTitle()),
+    Component.DesktopOnly(recentNotesComponent),
+    Component.DesktopOnly(Component.Darkmode()),
   ],
   right: [
-    // Component.Graph(),
     Component.DesktopOnly(Component.TableOfContents()),
-    //Component.Backlinks(),
   ],
 }
 
@@ -72,12 +67,9 @@ export const defaultListPageLayout: PageLayout = {
     Component.Search(),
   ],
   left: [
-    Component.PageTitle(),
-    // Component.Search(),
-    recentNotesComponent,
-    Component.MobileOnly(Component.Spacer()),
-    // Component.DesktopOnly(Component.Explorer()),
-    Component.Darkmode(),
+    Component.DesktopOnly(Component.PageTitle()),
+    Component.DesktopOnly(recentNotesComponent),
+    Component.DesktopOnly(Component.Darkmode()),
   ],
   right: [],
 }
@@ -88,11 +80,9 @@ export const defaultListPageLayout: PageLayout = {
 export const indexPageLayout: PageLayout = {
   beforeBody: [],
   left: [
-    Component.PageTitle(),
-    recentNotesComponent,
-    Component.MobileOnly(Component.Spacer()),
-    // Component.DesktopOnly(Component.Explorer()),
-    Component.Darkmode(),
+    Component.DesktopOnly(Component.PageTitle()),
+    Component.DesktopOnly(recentNotesComponent),
+    Component.DesktopOnly(Component.Darkmode()),
   ],
   right: [
     Component.DesktopOnly(Component.TableOfContents()),
@@ -109,12 +99,9 @@ export const bookmarksPageLayout: PageLayout = {
     Component.Search(),
   ],
   left: [
-    Component.PageTitle(),
-    // Component.Search(),
-    recentNotesComponent,
-    Component.MobileOnly(Component.Spacer()),
-    // Component.DesktopOnly(Component.Explorer()),
-    Component.Darkmode(),
+    Component.DesktopOnly(Component.PageTitle()),
+    Component.DesktopOnly(recentNotesComponent),
+    Component.DesktopOnly(Component.Darkmode()),
   ],
   right: [],
 }
@@ -127,12 +114,9 @@ export const researchReviewListPageLayout: PageLayout = {
     Component.Search(),
   ],
   left: [
-    Component.PageTitle(),
-    // Component.Search(),
-    recentNotesComponent,
-    Component.MobileOnly(Component.Spacer()),
-    // Component.DesktopOnly(Component.Explorer()),
-    Component.Darkmode(),
+    Component.DesktopOnly(Component.PageTitle()),
+    Component.DesktopOnly(recentNotesComponent),
+    Component.DesktopOnly(Component.Darkmode()),
   ],
   right: [],
 }
