@@ -12,26 +12,29 @@ const recentNotesComponent = Component.RecentNotes({
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
-  header: [Component.LinksHeader({
-    links: [
-      {
-        text: 'Research review',
-        url: `https://dechantoine.github.io/antoine-dechappe/Research-review/`,
-        iconUrl: 'https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Microscope/Color/microscope_color.svg'
-      },
-      {
-        text: 'Projects',
-        url: `https://dechantoine.github.io/antoine-dechappe/Projects/`,
-        iconUrl: 'https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Hammer%20and%20wrench/Color/hammer_and_wrench_color.svg'
-      },
-      {
-        text: 'Bookmarks',
-        url: `https://dechantoine.github.io/antoine-dechappe/Bookmarks/`,
-        iconUrl: 'https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Bookmark/Color/bookmark_color.svg'
-      }
-    ],
-  })],
-  afterBody: [],
+  header: [
+    Component.MobileOnly(Component.PageTitle()),
+    Component.LinksHeader({
+      links: [
+        {
+          text: 'Research review',
+          url: `https://dechantoine.github.io/antoine-dechappe/Research-review/`,
+          iconUrl: 'https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Microscope/Color/microscope_color.svg'
+        },
+        {
+          text: 'Projects',
+          url: `https://dechantoine.github.io/antoine-dechappe/Projects/`,
+          iconUrl: 'https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Hammer%20and%20wrench/Color/hammer_and_wrench_color.svg'
+        },
+        {
+          text: 'Bookmarks',
+          url: `https://dechantoine.github.io/antoine-dechappe/Bookmarks/`,
+          iconUrl: 'https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Bookmark/Color/bookmark_color.svg'
+        }
+      ],
+    })
+  ],
+  afterBody: [Component.MobileOnly(Component.Darkmode())],
   footer: Component.Footer({
     links: {
       'GitHub': "https://github.com/dechantoine",
