@@ -86,6 +86,9 @@ Now, let’s create a dataset class that reads PGN files on the fly:
 - It first scans all PGN files to count moves and store file-game-move triplets.
 - When retrieving a move, it loads the corresponding PGN file and extracts the board state.
 
+We will leverage the `python-chess` [package](https://python-chess.readthedocs.io/en/latest/), which provides methods for parsing PGNs, ensures moves are valid, checks castling rights and so on.
+We will make use of utils functions `board_to_tensor` and `result_to_tensor` defined in another file, their implementation is not important at this point.
+
 ```python
 import os  
 from typing import Union  
