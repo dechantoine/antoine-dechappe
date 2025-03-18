@@ -29,15 +29,15 @@ const config: QuartzConfig = {
       },
       colors: {
         lightMode: {
-          light: "#faf8f8",
-          lightgray: "#e5e5e5",
-          gray: "#b8b8b8",
-          darkgray: "#4e4e4e",
-          dark: "#2b2b2b",
-          secondary: "#284b63",
-          tertiary: "#84a59d",
-          highlight: "rgba(143, 159, 169, 0.15)",
-          textHighlight: "#fff23688",
+          light: "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 50%, rgba(3,119,143,1) 100%)",
+          lightgray: "#84a6a6",
+          gray: "#879b9b",
+          darkgray: "#d4d4d4",
+          dark: "#f6f6f6",
+          secondary: "#9dc8e3",
+          tertiary: "#e1f3ee",
+          highlight: "rgba(2,179,152,0.15)",
+          textHighlight: "rgba(2,179,152,0.15)",
         },
         darkMode: {
           light: "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 50%, rgba(3,119,143,1) 100%)",
@@ -46,7 +46,7 @@ const config: QuartzConfig = {
           darkgray: "#d4d4d4",
           dark: "#ebebec",
           secondary: "#7b97aa",
-          tertiary: "#84a59d",
+          tertiary: "#e1f3ee",
           highlight: "rgba(143, 159, 169, 0.15)",
           textHighlight: "#b3aa0288",
         },
@@ -61,7 +61,7 @@ const config: QuartzConfig = {
       }),
       Plugin.SyntaxHighlighting({
         theme: {
-          light: "github-light",
+          light: "github-dark",
           dark: "github-dark",
         },
         keepBackground: false,

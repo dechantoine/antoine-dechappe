@@ -1,10 +1,8 @@
 @use "./base.scss";
 
-// Add dark mode specific styles to override base.scss
-:root[saved-theme="dark"] {
+:root {
   body,
   section {
-    background-image: var(--light);
-    background-color: transparent; // Remove default background color
+    background: var(--light);
   }
 }

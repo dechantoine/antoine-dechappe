@@ -39,7 +39,7 @@ export const sharedPageComponents: SharedLayout = {
       ],
     })
   ],
-  afterBody: [Component.MobileOnly(Component.Darkmode())],
+  afterBody: [],
   footer: Component.Footer({
     links: {
       'GitHub': "https://github.com/dechantoine",
@@ -60,7 +60,6 @@ export const defaultContentPageLayout: PageLayout = {
   left: [
     Component.DesktopOnly(Component.PageTitle()),
     Component.DesktopOnly(recentNotesComponent),
-    Component.DesktopOnly(Component.Darkmode()),
   ],
   right: [
     Component.DesktopOnly(Component.TableOfContents()),
@@ -77,7 +76,6 @@ export const defaultListPageLayout: PageLayout = {
   left: [
     Component.DesktopOnly(Component.PageTitle()),
     Component.DesktopOnly(recentNotesComponent),
-    Component.DesktopOnly(Component.Darkmode()),
   ],
   right: [],
 }
@@ -90,7 +88,6 @@ export const indexPageLayout: PageLayout = {
   left: [
     Component.DesktopOnly(Component.PageTitle()),
     Component.DesktopOnly(recentNotesComponent),
-    Component.DesktopOnly(Component.Darkmode()),
   ],
   right: [
     Component.DesktopOnly(Component.TableOfContents()),
@@ -109,7 +106,6 @@ export const bookmarksPageLayout: PageLayout = {
   left: [
     Component.DesktopOnly(Component.PageTitle()),
     Component.DesktopOnly(recentNotesComponent),
-    Component.DesktopOnly(Component.Darkmode()),
   ],
   right: [],
 }
