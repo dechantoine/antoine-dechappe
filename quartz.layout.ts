@@ -2,10 +2,17 @@ import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
 import config from "./quartz.config"
 
+const latestResearchComponent = Component.RecentNotes({
+  title: "Latest research review",
+  limit: 1,
+  filter: (page) => page.slug.startsWith("Research-review/"),
+  showTags: false
+});
+
 const recentNotesComponent = Component.RecentNotes({
   title: "Recent writing",
-  limit: 5,
-  filter: (page) => !["index", "about-me", "projects"].includes(page.slug) && !page.slug.startsWith("Bookmarks/"),
+  limit: 3,
+  filter: (page) => !["index", "about-me"].includes(page.slug) && !page.slug.startsWith("Bookmarks/") && !page.slug.startsWith("Research-review/"),
   showTags: false
 });
 
@@ -59,6 +66,7 @@ export const defaultContentPageLayout: PageLayout = {
   ],
   left: [
     Component.DesktopOnly(Component.PageTitle()),
+    Component.DesktopOnly(latestResearchComponent),
     Component.DesktopOnly(recentNotesComponent),
   ],
   right: [
@@ -75,6 +83,7 @@ export const defaultListPageLayout: PageLayout = {
   ],
   left: [
     Component.DesktopOnly(Component.PageTitle()),
+    Component.DesktopOnly(latestResearchComponent),
     Component.DesktopOnly(recentNotesComponent),
   ],
   right: [],
@@ -87,6 +96,7 @@ export const indexPageLayout: PageLayout = {
   beforeBody: [],
   left: [
     Component.DesktopOnly(Component.PageTitle()),
+    Component.DesktopOnly(latestResearchComponent),
     Component.DesktopOnly(recentNotesComponent),
   ],
   right: [
@@ -105,6 +115,7 @@ export const bookmarksPageLayout: PageLayout = {
   ],
   left: [
     Component.DesktopOnly(Component.PageTitle()),
+    Component.DesktopOnly(latestResearchComponent),
     Component.DesktopOnly(recentNotesComponent),
   ],
   right: [],
@@ -119,8 +130,8 @@ export const researchReviewListPageLayout: PageLayout = {
   ],
   left: [
     Component.DesktopOnly(Component.PageTitle()),
+    Component.DesktopOnly(latestResearchComponent),
     Component.DesktopOnly(recentNotesComponent),
-    Component.DesktopOnly(Component.Darkmode()),
   ],
   right: [],
 }
