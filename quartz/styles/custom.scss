@@ -6,3 +6,48 @@
     background: var(--light);
   }
 }
+
+.bookmarks-list {
+  &.section {
+    flex-direction: column;
+  }
+
+  &.section-li {
+    border-bottom: 1px solid #333333;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0rem;
+
+    &:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+  }
+
+  &.desc {
+    flex-direction: column;
+
+    h3 a {
+      font-style: italic;
+      border: none;
+    }
+  }
+
+  &.summary {
+    font-size: 1rem;
+    color: var(--light);
+  }
+
+  &.tags {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+
+    li {
+      display: inline;
+      margin-right: 1rem;
+    }
+  }
+}
