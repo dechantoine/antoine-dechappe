@@ -1,5 +1,5 @@
 ---
-title: Pre-commit options in pyproject.toml should be gitted first
+title: Pre-commit options in pyproject.toml should be committed first
 tags:
   - pre-commit
   - pyproject
