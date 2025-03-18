@@ -17,6 +17,11 @@ export const sharedPageComponents: SharedLayout = {
     Component.LinksHeader({
       links: [
         {
+          text: 'Blog',
+          url: `https://dechantoine.github.io/antoine-dechappe/Blog/`,
+          iconUrl: 'https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Black nib/Color/black_nib_color.svg'
+        },
+        {
           text: 'Research review',
           url: `https://dechantoine.github.io/antoine-dechappe/Research-review/`,
           iconUrl: 'https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Microscope/Color/microscope_color.svg'
