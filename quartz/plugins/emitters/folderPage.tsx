@@ -20,16 +20,18 @@ import { FolderContent } from "../../components"
 import { write } from "./helpers"
 import { i18n } from "../../i18n"
 import DepGraph from "../../depgraph"
+import { Options } from "../../components/ExplorerNode"
 
 interface FolderPageOptions extends FullPageLayout {
   sort?: (f1: QuartzPluginData, f2: QuartzPluginData) => number
+  explorerOptions?: Partial<Options>
 }
 
 export const FolderPage: QuartzEmitterPlugin<Partial<FolderPageOptions>> = (userOpts) => {
   const opts: FullPageLayout = {
     ...sharedPageComponents,
     ...defaultListPageLayout,
-    pageBody: FolderContent({ sort: userOpts?.sort }),
+    pageBody: FolderContent({ sort: userOpts?.sort, explorerOptions: { ...userOpts?.explorerOptions, folderClickBehavior: "link" } }),
     ...userOpts,
   }
 

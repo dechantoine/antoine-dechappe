@@ -185,38 +185,16 @@ export function ExplorerNode({ node, opts, fullPath, fileData }: ExplorerNodePro
         <li>
           {node.name !== "" && (
             // Node with entire folder
-            // Render svg button + folder name, then children
+            // Render folder name, then children
             <div class="folder-container">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="12"
-                height="12"
-                viewBox="5 8 14 8"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="folder-icon"
-              >
-                <polyline points="6 9 12 15 18 9"></polyline>
-              </svg>
               {/* render <a> tag if folderBehavior is "link", otherwise render <button> with collapse click event */}
               <div key={node.name} data-folderpath={folderPath}>
-                {folderBehavior === "link" ? (
-                  <a href={href} data-for={node.name} class="folder-title">
-                    {node.displayName}
-                  </a>
-                ) : (
-                  <button class="folder-button">
-                    <span class="folder-title">{node.displayName}</span>
-                  </button>
-                )}
+                <span class={`folder-title ${node.depth > 0 ? "subfolder" : ""}`}>{node.displayName}</span>
               </div>
             </div>
           )}
           {/* Recursively render children of folder */}
-          <div class={`folder-outer ${node.depth === 0 || isDefaultOpen ? "open" : ""}`}>
+          <div class={`folder-outer open`}>
             <ul
               // Inline style for left folder paddings
               style={{
