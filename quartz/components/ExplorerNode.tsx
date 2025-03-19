@@ -48,10 +48,10 @@ export class FileNode {
   file: QuartzPluginData | null
   depth: number
 
-  constructor(slugSegment: string, displayName?: string, file?: QuartzPluginData, depth?: number) {
+  constructor(path: string, displayName?: string, file?: QuartzPluginData, depth?: number) {
     this.children = []
-    this.name = slugSegment
-    this.displayName = displayName ?? file?.frontmatter?.title ?? slugSegment
+    this.name = file ? file.slug : path
+    this.displayName = displayName ?? file?.frontmatter?.title ?? path.split("/").pop() ?? path
     this.file = file ? clone(file) : null
     this.depth = depth ?? 0
   }
@@ -62,6 +62,7 @@ export class FileNode {
     }
 
     const nextSegment = fileData.path[0]
+    const currentPath = fileData.file.slug!.split("/").slice(0, -fileData.path.length + 1).join("/")
 
     // base case, insert here
     if (fileData.path.length === 1) {
@@ -73,7 +74,7 @@ export class FileNode {
         }
       } else {
         // direct child
-        this.children.push(new FileNode(nextSegment, undefined, fileData.file, this.depth + 1))
+        this.children.push(new FileNode(fileData.file.slug!, undefined, fileData.file, this.depth + 1))
       }
 
       return
@@ -81,14 +82,14 @@ export class FileNode {
 
     // find the right child to insert into
     fileData.path = fileData.path.splice(1)
-    const child = this.children.find((c) => c.name === nextSegment)
+    const child = this.children.find((c) => c.name === currentPath)
     if (child) {
       child.insert(fileData)
       return
     }
 
     const newChild = new FileNode(
-      nextSegment,
+      currentPath,
       getPathSegment(fileData.file.relativePath, this.depth),
       undefined,
       this.depth + 1,
