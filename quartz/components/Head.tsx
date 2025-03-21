@@ -6,9 +6,22 @@ import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } fro
 
 export default (() => {
   const Head: QuartzComponent = ({ cfg, fileData, externalResources }: QuartzComponentProps) => {
-    const titleSuffix = cfg.pageTitleSuffix ?? ""
-    const title =
-      (fileData.frontmatter?.title ?? i18n(cfg.locale).propertyDefaults.title) + titleSuffix
+    const { frontmatter, slug } = fileData
+    const { pageTitle, pageTitleSuffix } = cfg
+    let title = frontmatter?.title ?? i18n(cfg.locale).propertyDefaults.title;
+
+    if (slug === "index") {
+      // If it's the index page, use the configured pageTitle
+      title = pageTitle;
+    } else if (slug === "about-me") {
+      // If it's the about-me page, use the configured pageTitle + " - About me"
+      title = pageTitle + ' - About me'
+    } else if (slug.endsWith("/index") && slug !== "index") {
+      // If it's a folder page (slug ends with /index and is not the root index), use the configured pageTitle + " - " + folder name
+      const folderName = slug.split("/").slice(-2, -1)[0]; // Extract the folder name from the slug
+      title = `${pageTitle} - ${folderName}`;
+    }
+
     const description =
       fileData.description?.trim() ?? i18n(cfg.locale).propertyDefaults.description
     const { css, js } = externalResources
