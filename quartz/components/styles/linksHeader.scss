@@ -12,6 +12,7 @@ header {
   font-size: 1.2em;
   justify-content: space-between;
   margin: 0 0.2em;
+  margin-bottom: 0.5rem; /* Add this line */
 
   span {
     margin-top: 0.75em;
@@ -29,15 +30,10 @@ header {
 }
 
 @media #{$mobile} {
-  #links-header > * {
-    width: calc(33.33% - 0.67em); /* 33.33% width with some gap */
+  #links-header img { /* Add this line */
+    display: none; /* Hide the icons */
   }
-
-  #links-header > *:nth-child(3n-1) {
-    text-align: center;
-  }
-
-  #links-header > *:nth-child(3n) {
-    text-align: right;
+  #links-header a { /* Add this line */
+    font-size: 0.8rem; /* Reduce font size */
   }
 }
