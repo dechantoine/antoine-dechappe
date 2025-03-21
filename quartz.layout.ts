@@ -1,6 +1,6 @@
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
-import config from "./quartz.config"
+
 
 const latestResearchComponent = Component.RecentNotes({
   title: "Latest research review",
@@ -15,6 +15,13 @@ const recentNotesComponent = Component.RecentNotes({
   filter: (page) => !["index", "about-me"].includes(page.slug) && !page.slug.startsWith("Bookmarks/") && !page.slug.startsWith("Research-review/"),
   showTags: false
 });
+
+const leftPanel = [
+    Component.DesktopOnly(Component.PageTitle()),
+    Component.DesktopOnly(Component.AboutMe()),
+    Component.DesktopOnly(latestResearchComponent),
+    Component.DesktopOnly(recentNotesComponent),
+  ]
 
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
@@ -82,12 +89,7 @@ export const defaultListPageLayout: PageLayout = {
     Component.Spacer(),
     Component.Search(),
   ],
-  left: [
-    Component.DesktopOnly(Component.PageTitle()),
-    Component.DesktopOnly(Component.AboutMe()),
-    Component.DesktopOnly(latestResearchComponent),
-    Component.DesktopOnly(recentNotesComponent),
-  ],
+  left: leftPanel,
   right: [],
 }
 
@@ -96,12 +98,7 @@ export const defaultListPageLayout: PageLayout = {
 // components for the index page
 export const indexPageLayout: PageLayout = {
   beforeBody: [],
-  left: [
-    Component.DesktopOnly(Component.PageTitle()),
-    Component.DesktopOnly(Component.AboutMe()),
-    Component.DesktopOnly(latestResearchComponent),
-    Component.DesktopOnly(recentNotesComponent),
-  ],
+  left: leftPanel,
   right: [
     Component.DesktopOnly(Component.TableOfContents()),
   ],
@@ -116,27 +113,6 @@ export const bookmarksPageLayout: PageLayout = {
     Component.Spacer(),
     Component.Search(),
   ],
-  left: [
-    Component.DesktopOnly(Component.PageTitle()),
-    Component.DesktopOnly(Component.AboutMe()),
-    Component.DesktopOnly(latestResearchComponent),
-    Component.DesktopOnly(recentNotesComponent),
-  ],
-  right: [],
-}
-
-// components for the research review page
-export const researchReviewListPageLayout: PageLayout = {
-  beforeBody: [
-    Component.Breadcrumbs(),
-    Component.Spacer(),
-    Component.Search(),
-  ],
-  left: [
-    Component.DesktopOnly(Component.PageTitle()),
-    Component.DesktopOnly(Component.AboutMe()),
-    Component.DesktopOnly(latestResearchComponent),
-    Component.DesktopOnly(recentNotesComponent),
-  ],
+  left: leftPanel,
   right: [],
 }
