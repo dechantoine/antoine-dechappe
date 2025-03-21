@@ -44,7 +44,7 @@ export const sharedPageComponents: SharedLayout = {
           iconUrl: 'https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Bookmark/Color/bookmark_color.svg'
         }
       ],
-    })
+    }),
   ],
   afterBody: [],
   footer: Component.Footer({
@@ -66,6 +66,7 @@ export const defaultContentPageLayout: PageLayout = {
   ],
   left: [
     Component.DesktopOnly(Component.PageTitle()),
+    Component.DesktopOnly(Component.AboutMe()),
     Component.DesktopOnly(latestResearchComponent),
     Component.DesktopOnly(recentNotesComponent),
   ],
@@ -83,6 +84,7 @@ export const defaultListPageLayout: PageLayout = {
   ],
   left: [
     Component.DesktopOnly(Component.PageTitle()),
+    Component.DesktopOnly(Component.AboutMe()),
     Component.DesktopOnly(latestResearchComponent),
     Component.DesktopOnly(recentNotesComponent),
   ],
@@ -96,6 +98,7 @@ export const indexPageLayout: PageLayout = {
   beforeBody: [],
   left: [
     Component.DesktopOnly(Component.PageTitle()),
+    Component.DesktopOnly(Component.AboutMe()),
     Component.DesktopOnly(latestResearchComponent),
     Component.DesktopOnly(recentNotesComponent),
   ],
@@ -115,6 +118,7 @@ export const bookmarksPageLayout: PageLayout = {
   ],
   left: [
     Component.DesktopOnly(Component.PageTitle()),
+    Component.DesktopOnly(Component.AboutMe()),
     Component.DesktopOnly(latestResearchComponent),
     Component.DesktopOnly(recentNotesComponent),
   ],
@@ -130,6 +134,7 @@ export const researchReviewListPageLayout: PageLayout = {
   ],
   left: [
     Component.DesktopOnly(Component.PageTitle()),
+    Component.DesktopOnly(Component.AboutMe()),
     Component.DesktopOnly(latestResearchComponent),
     Component.DesktopOnly(recentNotesComponent),
   ],

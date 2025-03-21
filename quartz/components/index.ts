@@ -23,6 +23,7 @@ import Breadcrumbs from "./Breadcrumbs"
 import Comments from "./Comments"
 import LinksHeader from "./LinksHeader"
 import IntroText from "./IntroText"
+import AboutMe from "./AboutMe"
 
 export {
   ArticleTitle,
@@ -50,4 +51,5 @@ export {
   Comments,
   LinksHeader,
   IntroText,
+  AboutMe,
 }
