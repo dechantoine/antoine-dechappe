@@ -10,7 +10,7 @@ Proficient end-to-end Data Scientist, I am driven by the challenge of solving hi
 - 🤖 Current hot topics involve LLMs efficiency & evaluation, RAGs, Agents, finetuning...
 - 🕵️ I have also tackled fraud detection.
 - 🫥 My not-so-secret favorite topic is Reinforcement Learning, I would love to apply its principles on a genuine industrial project.
-- 🥸 Fun fact about me: I used to think GANs where the next big thing and studied a lot about them... now I aim for more stable training curves.
+- 🥸 Fun fact about me: I used to think GANs were the next big thing and studied a lot about them... now I aim for more stable training curves.
 - 🎓 I am a certified [Google Cloud Professional Machine Learning Engineer](https://google.accredible.com/2c755aa9-55bc-4977-b61e-7decd812a43a?key=3b0e57f6a6826e7a39c8937d558851a71fa8d43b547e8db036d3d2a0c0a4c5da)
 
 ## 🛠️ Tools & technologies I master
