@@ -58,7 +58,7 @@ export const sharedPageComponents: SharedLayout = {
     links: {
       'GitHub': "https://github.com/dechantoine",
       'LinkedIn': "https://www.linkedin.com/in/antoine-dechappe/",
-      'Email': 'mailto:dechantoine@gmail.com'
+      'Email': 'mailto:contact@antoine-does-ai.com'
     },
   }),
 }
