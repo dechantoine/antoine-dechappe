@@ -25,14 +25,25 @@ This paper **addresses the challenge of complex spatial reasoning in Large Langu
 ### Preliminary concepts
 
 - **Token discrepancy loss** introduced in this paper aims to bridge the gap between separately trained tokenizer (texts and images) in auto-regressive MLLM:
-$\quad$let $N$ be the size of the dictionary of image tokenizer; we can obtain an embedding $e_{vis_{n}}$ for each token 
+
+$\quad$Let $N$ be the size of the dictionary of image tokenizer; we can obtain an embedding $e_{vis_{n}}$ for each token.
+
 $\quad$Using those $N$ embeddings, we can compute their similarity matrix with MSE :
-$$S = [MSE(e_{vis_{i}},e_{vis_{j}})]\forall (i,j) \in N$$ $\quad$Using the multimodal transformer to predict the next image token, we can compute the similarity of its embeddings with the embeddings of the vocabulary:
+
+$$S = [MSE(e_{vis_{i}},e_{vis_{j}})]\forall (i,j) \in N$$
+
+$\quad$Using the multimodal transformer to predict the next image token, we can compute the similarity of its embeddings with the embeddings of the vocabulary:
+
 $$S_{t_{vis_{k}}} = [MSE(e_{vis_{k}},e_{vis_{i}})]\forall i \in N$$
+
  $\quad$thus, $S_{t_{vis_{k}}} \in \mathbb{R}^N$.
+ 
   $\quad$The model predicts the probability distribution $P(t_k) \in \mathbb{R}^N$ for the k-th image token over the image token vocabulary.
+  
  $\quad$Finally, we can penalize the model for assigning a high probability to an image token $t_k$ while its embeddings deviate significantly from the embeddings of the ground truth of this given token, by summing the dot product over all generated tokens: 
+ 
  $$\mathcal{L}_D=\sum_{i=1}^{n}S_{t_{vis_{i}}} \cdot P(t_i)$$
+ 
  $\quad$During training, the image tokenizer and text tokenizer are kept frozen and the transformer is fine-tuned using the token discrepancy loss in addition to cross entropy for both text and image tokens.
  ![[assets/imagine_while_reasoning_5.png]]
 
