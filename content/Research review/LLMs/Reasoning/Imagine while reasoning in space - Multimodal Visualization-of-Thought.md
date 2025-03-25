@@ -70,7 +70,7 @@ The primary objectives of the experiments are to:
 
 - **Models**: 
 	- The Anole-7B model, tuned on Chameleon, is used as the backbone. Anole can generate interleaved text and image, making it well-suited for MVoT.
-	- GPT-4o *2024-07-01* for baseline.
+	- *GPT-4o 2024-07-01* for baseline.
 	- ![](assets/imagine_while_reasoning_2.png)
 - **Datasets**: The experiments are conducted on three dynamic spatial reasoning tasks: 
 	- MAZE navigation 
