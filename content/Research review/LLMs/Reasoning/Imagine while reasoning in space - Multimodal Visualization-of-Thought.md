@@ -8,7 +8,7 @@ date: 2025-03-21
 ---
 ## Abstract
 
-This paper **addresses the challenge of complex spatial reasoning in Large Language Models (LLMs) and Multimodal Large Language Models (MLLMs)**, where Chain-of-Thought (CoT) prompting often falls short. To address this, the paper introduces **Multimodal Visualization-of-Thought (MVoT)**, a novel reasoning paradigm that enables visual thinking in MLLMs by generating image visualizations of reasoning traces. MVoT aims to enhance reasoning quality and model interpretability by allowing the model to "think" in both words and images, similar to human cognition.
+This paper **addresses the challenge of complex spatial reasoning in Large Language Models (LLMs) and Multimodal Large Language Models (MLLMs)**, where Chain-of-Thought (CoT) prompting often falls short. The paper introduces **Multimodal Visualization-of-Thought (MVoT)**, a novel reasoning paradigm that enables visual thinking in MLLMs by generating image visualizations of reasoning traces. MVoT aims to enhance reasoning quality and model interpretability by allowing the model to "think" in both words and images, similar to human cognition.
 
 ![](assets/imagine_while_reasoning_0.png)
 
@@ -26,8 +26,7 @@ This paper **addresses the challenge of complex spatial reasoning in Large Langu
 
 **Token discrepancy loss** introduced in this paper aims to bridge the gap between separately trained tokenizer (texts and images) in auto-regressive MLLM:
 >Let $N$ be the size of the dictionary of image tokenizer; we can obtain an embedding $e_{vis_{n}}$ for each token.
->
->Using those $N$ embeddings, we can compute their similarity matrix with MSE : 
+>$\newline$Using those $N$ embeddings, we can compute their similarity matrix with MSE : 
 >$$
 >S = [MSE(e_{vis_{i}},e_{vis_{j}})]\forall (i,j) \in N
 >$$
@@ -36,30 +35,22 @@ This paper **addresses the challenge of complex spatial reasoning in Large Langu
 >S_{t_{vis_{k}}} = [MSE(e_{vis_{k}},e_{vis_{i}})]\forall i \in N
 >$$
 >thus, $S_{t_{vis_{k}}} \in \mathbb{R}^N$.
->
->The model predicts the probability distribution $P(t_k) \in \mathbb{R}^N$ for the k-th image token over the image token vocabulary.
->
->Finally, we can penalize the model for assigning a high probability to an image token $t_k$ while its embeddings deviate significantly from the embeddings of the ground truth of this given token, by summing the dot product over all generated tokens: 
+>$\newline$The model predicts the probability distribution $P(t_k) \in \mathbb{R}^N$ for the k-th image token over the image token vocabulary.
+>$\newline$Finally, we can penalize the model for assigning a high probability to an image token $t_k$ while its embeddings deviate significantly from the embeddings of the ground truth of this given token, by summing the dot product over all generated tokens: 
 >$$
 >\mathcal{L}_D=\sum_{i=1}^{n}S_{t_{vis_{i}}} \cdot P(t_i)
 >$$
->
 >During training, the image tokenizer and text tokenizer are kept frozen and the transformer is fine-tuned using the token discrepancy loss in addition to cross entropy for both text and image tokens.
 	![[assets/imagine_while_reasoning_5.png]]
 
 $\newline$
 **MVot formulation**: 
 >let $P_{θ}$ represent a pre-trained MLLM with parameters $θ$,
->
->$x$ a multimodal input sequence,
->
->$z$ a language sequence of verbal thoughts,
->
->$v$ an image sequence of visual thoughts,
->
->$\hat{z}_1,...,\hat{z}_m$ the intermediate steps of traditional CoT,
->
->MVoT enhances CoT by adding a image visualization $v_i$ to each intermediate step $z_i$ :
+>$\newline x$ a multimodal input sequence,
+>$\newline z$ a language sequence of verbal thoughts,
+>$\newline v$ an image sequence of visual thoughts,
+>$\newline \hat{z}_1,...,\hat{z}_m$ the intermediate steps of traditional CoT,
+>$\newline$MVoT enhances CoT by adding a image visualization $v_i$ to each intermediate step $z_i$ :
 >$$
 >\hat{v}_i{\sim}P_θ(v_i\mid\hat{z}_1,\hat{v}_1,...,\hat{v}_{i-1},\hat{z}_{i})
 >$$
