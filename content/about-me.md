@@ -19,6 +19,6 @@ Proficient end-to-end Data Scientist, I am driven by the challenge of solving hi
 
 ## 📫 How to reach me ?
 
-- Email : **dechantoine@gmail.com**
+- Email : **contact@antoine-does-ai.com**
 - LinkedIn : [Antoine Déchappe](https://www.linkedin.com/in/antoine-dechappe/)
 - X : [@AI_bIAses](https://x.com/AI_bIAses)
