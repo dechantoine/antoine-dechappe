@@ -1,10 +1,7 @@
 ---
-title: "SmolVLM: Redefining small and efficientmultimodal models"
+title: "SmolVLM: Redefining small and efficient multimodal models"
 draft: false
-tags:
-  - computer-vision
-  - vlm
-  - hugging-face
+tags: []
 paper: https://arxiv.org/pdf/2504.05299
 code: https://github.com/huggingface/smollm
 date: 2025-05-12
