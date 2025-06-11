@@ -33,7 +33,7 @@ Training on high-quality synthetic data from strong language models (LMs) is a c
 - Metrics :
 	- coverage@k = [pass@k](https://antoine-does-ai.com/Research-review/Concepts/Metrics/pass_at_k)
 	- $diversity@k$ : the average number of unique correct solutions obtained per question when sampling 𝑘 solutions per question
-	- $maj@k$ : generate 𝑘 solutions per problem and select the final answer that appears most among the 𝑘 samples then compute accuracy.
+	- [maj@k](https://antoine-does-ai.com/Research-review/Concepts/Metrics/maj_at_k)
 	- *false positive rate (FPR)* : the percentage of solutions in $\tilde{D}_G$ where the reasoning is incorrect, despite the final answer being correct.
 
 ### Objectives

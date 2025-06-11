@@ -6,7 +6,8 @@ date: 2025-06-11
 ---
 ## Definition
 
-$pass^k$ measures the probability of a model generating a correct solution in all of its $k$ independent attempts. Unlike [pass@k](https://antoine-does-ai.com/Research-review/Concepts/Metrics/pass_at_k), which checks for at least one correct solution, $pass^k$ demands consistent correctness across all $k$ samples. It serves as a measure of a model's reliability.
+$pass^k$ measures the probability of a model generating a correct solution in all of its $k$ independent attempts. 
+$pass^k$ demands consistent correctness across all $k$ samples. It serves as a measure of a model's reliability.
 
 ## Formula
 
