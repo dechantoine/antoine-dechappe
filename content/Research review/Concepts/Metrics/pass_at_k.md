@@ -6,7 +6,7 @@ date: 2025-06-11
 ---
 ## Definition
 
-**pass@k** measures the probability of finding at least one correct solution within a random sample of $k$ solutions, drawn from a larger pool of $n$ generated attempts.
+**pass@k** measures the probability of finding at least one correct solution within a random sample of $k$ solutions, drawn from a larger pool of $n$ independently generated attempts.
 
 ## Formula
 
@@ -15,7 +15,7 @@ let $D = \{q_i, a_i\}_{i=1}^{i=m}$ be a test dataset
 - with questions $𝑞_𝑖$,
 - and answers $a_i$,
 
-let $D_G = \{q_i, \{\hat{a}_{ij}\}^{j=n}_{j=1}\}_{i=1}^{i=m}$ be a dataset of generated answers where 
+let $D_G = \{q_i, \{\hat{a}_{ij}\}^{j=n}_{j=1}\}_{i=1}^{i=m}$ be a dataset of independently generated answers where 
 - $n$ is the number of generated answers per question, 
 - $\hat{a}_{ij}$ is the model’s 𝑗-th final answer for $q_i$,
 - $c_i$ is the number of correct solutions for $q_i$ in $\{\hat{a}_{ij}\}^{j=n}_{j=1}$
@@ -53,7 +53,7 @@ pass@1 & = 1 - \left[\frac{\binom{200-10}{1}}{\binom{200}{1}}\right]\notag\\
 \end{align}
 $$
 
-So, there is a **5%** chance that any single generated sample is correct.
+So, there is a **5%** chance that any single generated sample is correct. This is identical to $pass^1$.
 
 **Calculating $pass@5$:**
 
