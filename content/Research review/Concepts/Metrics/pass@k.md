@@ -46,10 +46,10 @@ Using the formula:
 
 $$
 \begin{align}
-pass@1 & = 1 - \left[\frac{\binom{200-10}{1}}{\binom{200}{1}}\right]\notag\\
-    &= 1 - \left[\frac{190}{200}\right]\notag\\
-    &= 1 - 0.95\notag\\
-    &= 0.05\notag\\
+pass@1 & = 1 - \left[\frac{\binom{200-10}{1}}{\binom{200}{1}}\right]\\
+    &= 1 - \left[\frac{190}{200}\right]\\
+    &= 1 - 0.95\\
+    &= 0.05\\
 \end{align}
 $$
 
@@ -57,17 +57,17 @@ So, there is a **5%** chance that any single generated sample is correct.
 
 **Calculating $pass@5$:**
 
-This is the probability that at least one of the top 5 samples is correct. 
+This is the probability that at least one of 5 randomly chosen samples is correct. 
 
 Using the formula: 
 
 $$
 \begin{align}
-pass@5 & = 1 - \left[\frac{\binom{200-10}{5}}{\binom{200}{5}}\right]\notag\\
-    &= 1 - \left[\frac{\frac{190!}{5!\times185!}}{\frac{200!}{5!\times195!}}\right]\notag\\
-    &= 1 - \left[\frac{190\times189\times188\times187\times186}{200\times199\times198\times197\times196}\right]\notag\\
-    &≈ 1 - 0.77\notag\\
-    &≈ 0.23\notag\\
+pass@5 & = 1 - \left[\frac{\binom{200-10}{5}}{\binom{200}{5}}\right]\\
+    &= 1 - \left[\frac{\frac{190!}{5!\times185!}}{\frac{200!}{5!\times195!}}\right]\\
+    &= 1 - \left[\frac{190\times189\times188\times187\times186}{200\times199\times198\times197\times196}\right]\\
+    &≈ 1 - 0.77\\
+    &≈ 0.23\\
 \end{align}
 $$
 
@@ -75,13 +75,13 @@ So, there is approximately a **23%** chance of finding a correct solution within
 
 **Calculating $pass@10$:**
 
-This is the probability that at least one of the top 10 samples is correct.
+This is the probability that at least one of 10 randomly chosen samples is correct.
 
 The calculation would continue in the same manner: 
 
 $$
 \begin{align}
-pass@10 & = 1 - \left[\frac{\binom{200-10}{10}}{\binom{200}{10}}\right]\notag\\
+pass@10 & = 1 - \left[\frac{\binom{200-10}{10}}{\binom{200}{10}}\right]
 \end{align}
 $$
 
