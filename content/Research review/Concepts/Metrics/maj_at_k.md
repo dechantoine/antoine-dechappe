@@ -48,6 +48,7 @@ For the first equation, the result are as follows:
 - Answer $b_1$ (correct)
 - Answer $b_1$ (correct)
 - Answer $c_1$ (incorrect)
+
 Then $\hat{a}_{i,maj​}=b_1$. 
 
 For the second equation, the result are as follows:
@@ -56,6 +57,7 @@ For the second equation, the result are as follows:
 - Answer $b_2$ (incorrect)
 - Answer $a_2$ (incorrect)
 - Answer $c_2$ (correct)
+
 Let's break tie by selecting at random: $\hat{a}_{i,maj​}=a_2$. 
 
 For the third equation, the result are as follows:
@@ -64,6 +66,7 @@ For the third equation, the result are as follows:
 - Answer $c_3$ (correct)
 - Answer $c_3$ (correct)
 - Answer $c_3$ (correct)
+
 Then $\hat{a}_{i,maj​}=c_3$.
 
 Since $b_1$ and $c_3$ are correct in our exemple, and $a_2$ is not:
