@@ -46,10 +46,10 @@ Using the formula:
 
 $$
 \begin{align}
-pass@1 & = 1 - \left[\frac{\binom{200-10}{1}}{\binom{200}{1}}\right]\\
-    &= 1 - \left[\frac{190}{200}\right]\\
-    &= 1 - 0.95\\
-    &= 0.05\\
+pass@1 & = 1 - \left[\frac{\binom{200-10}{1}}{\binom{200}{1}}\right]\notag\\
+    &= 1 - \left[\frac{190}{200}\right]\notag\\
+    &= 1 - 0.95\notag\\
+    &= 0.05\notag\\
 \end{align}
 $$
 
@@ -63,11 +63,11 @@ Using the formula:
 
 $$
 \begin{align}
-pass@5 & = 1 - \left[\frac{\binom{200-10}{5}}{\binom{200}{5}}\right]\\
-    &= 1 - \left[\frac{\frac{190!}{5!\times185!}}{\frac{200!}{5!\times195!}}\right]\\
-    &= 1 - \left[\frac{190\times189\times188\times187\times186}{200\times199\times198\times197\times196}\right]\\
-    &≈ 1 - 0.77\\
-    &≈ 0.23\\
+pass@5 & = 1 - \left[\frac{\binom{200-10}{5}}{\binom{200}{5}}\right]\notag\\
+    &= 1 - \left[\frac{\frac{190!}{5!\times185!}}{\frac{200!}{5!\times195!}}\right]\notag\\
+    &= 1 - \left[\frac{190\times189\times188\times187\times186}{200\times199\times198\times197\times196}\right]\notag\\
+    &≈ 1 - 0.77\notag\\
+    &≈ 0.23\notag\\
 \end{align}
 $$
 
@@ -81,7 +81,7 @@ The calculation would continue in the same manner:
 
 $$
 \begin{align}
-pass@10 & = 1 - \left[\frac{\binom{200-10}{10}}{\binom{200}{10}}\right]
+pass@10 & = 1 - \left[\frac{\binom{200-10}{10}}{\binom{200}{10}}\right]\notag
 \end{align}
 $$
 
