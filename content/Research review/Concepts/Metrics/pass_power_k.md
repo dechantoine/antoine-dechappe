@@ -6,7 +6,7 @@ date: 2025-06-11
 ---
 ## Definition
 
-$pass^k$ measures the probability of a model generating a correct solution in all of its $k$ independent attempts. Unlike [[pass@k]], which checks for at least one correct solution, $pass^k$ demands consistent correctness across all $k$ samples. It serves as a measure of a model's reliability.
+$pass^k$ measures the probability of a model generating a correct solution in all of its $k$ independent attempts. Unlike [pass@k](https://antoine-does-ai.com/Research-review/Concepts/Metrics/pass_at_k), which checks for at least one correct solution, $pass^k$ demands consistent correctness across all $k$ samples. It serves as a measure of a model's reliability.
 
 ## Formula
 
@@ -43,9 +43,11 @@ Now, let's calculate $pass^1$, $pass^5$, and $pass^{10}$.
 This tells us the probability that a single, randomly chosen sample is correct.
 
 Using the formula: 
-$$\begin{align}
-pass^1 & = (\frac{10}{200})^1\notag\\
-& = 0.05\notag\\
+
+$$
+\begin{align}
+pass^1 & = (\frac{10}{200})^1\notag\\ 
+    & = 0.05\notag\\
 \end{align}
 $$
 
@@ -57,10 +59,11 @@ This is the probability that all 5 of the first 5 samples are correct.
 
 Using the formula: 
 
-$$\begin{align}
+$$
+\begin{align}
 pass^5 & =(\frac{10}{200})^5\notag\\
-& = (0.05)^5\notag\\
-& = 3.125\times 10^{-7}\notag\\
+    & = (0.05)^5\notag\\
+    & = 3.125\times 10^{-7}\notag\\
 \end{align}
 $$
 
@@ -72,10 +75,11 @@ This is the probability that all 10 of the first 10 samples are correct.
 
 The calculation continues in the same manner:
 
-$$\begin{align}
+$$
+\begin{align}
 pass^{10} & =(\frac{10}{200})^{10}\notag\\
-& = (0.05)^{10}\notag\\
-& = 9.765625\times 10^{-14}\notag\\
+    & = (0.05)^{10}\notag\\
+    & = 9.765625\times 10^{-14}\notag\\
 \end{align}
 $$
 
@@ -84,5 +88,5 @@ The resulting value is astronomically small, highlighting the metric's strictnes
 ## Usage
 
 - $pass^k$ is a measure of a model's reliability and consistency. A high $pass^k$ score (for $k>1$) would indicate an exceptionally robust model that is correct with high frequency.
-- $pass^k$ is the conceptual opposite of [[pass@k]]. While [[pass@k]] values increase toward 1.0 as $k$ grows, $pass^k$ values decrease exponentially, quickly approaching zero. 
+- $pass^k$ is the conceptual opposite of [pass@k](https://antoine-does-ai.com/Research-review/Concepts/Metrics/pass_at_k). While [pass@k](https://antoine-does-ai.com/Research-review/Concepts/Metrics/pass_at_k) values increase toward 1.0 as $k$ grows, $pass^k$ values decrease exponentially, quickly approaching zero. 
 - $pass^k$ could be valuable for safety-critical or high-stakes applications where every output in a batch must be correct. For instance, if a model were used to automatically patch a security vulnerability across thousands of codebases, a single failure could be catastrophic.

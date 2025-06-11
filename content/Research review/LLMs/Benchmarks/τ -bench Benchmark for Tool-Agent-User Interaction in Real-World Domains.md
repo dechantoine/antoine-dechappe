@@ -31,8 +31,8 @@ Agent needs to gather the required information by interacting with the user, che
 ### Preliminary concepts
 
 - Metrics :
-	- $pass^k = E_{task} [\binom{c}{k} / \binom{n}{k}]$, defined as the chance that all k i.i.d. task trials are successful, averaged across tasks.
-	- $pass@k = 1 - E_{task} [\binom{n-c}{k} / \binom{n}{k}]$, defined as the chance that at least one out of k i.i.d. task trials is successful.
+	- [pass^k](https://antoine-does-ai.com/Research-review/Concepts/Metrics/pass_power_k)  the chance that all k i.i.d. task trials are successful, averaged across tasks.
+	- [pass@k](https://antoine-does-ai.com/Research-review/Concepts/Metrics/pass_at_k): the chance that at least one of k i.i.d. task trials is successful, averaged across tasks.
 
 ### Objectives
 
