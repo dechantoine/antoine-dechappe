@@ -24,10 +24,6 @@ date: 2024-09-20
 
 ### Preliminary concepts
 
-**[Perplexity](https://huggingface.co/docs/transformers/en/perplexity)**: one of the most common metrics for evaluating autoregressive language models. The tokenization procedure has a direct impact on a model’s perplexity which should always be taken into consideration when comparing different models. If we have a tokenized sequence $X=(x_0,x_1,…,x_t)$, then the perplexity of $X$ is :
-
-$$\text{PPL}(X) = \exp \Bigl\{ -\frac{1}{t}\sum_i^t \log p_\theta (x_i|x_{<i}) \Bigl\}$$
-
 **Domain posterior**: A probability distribution estimating the likelihood of a sequence belonging to each domain. Used for ensembling ELMs and weighting parameter averages.
 
 $$p(D = j | x<t)= \frac{p(x<t | D = j) \cdot p(D = j)}{p(x<t)} = \frac{p(x<t | D = j) \cdot p(D = j)}{\sum_{j'=1}^{k} p(x<t | D = j') \cdot p(D = j')}$$
@@ -65,7 +61,7 @@ where:
 	- Precision: fp16.
 
 - Metrics:
-	- Perplexity: Used to evaluate the language modeling performance of the models.
+	- [[Perplexity]]: Used to evaluate the language modeling performance of the models.
 
 - Branch-Train-Merge algorithm:
 	- step 0 - initialization : 
