@@ -11,14 +11,19 @@ date: 2025-06-12
 ## Formula
 
 Let $\theta$ be the parameters of an autoregressive model. If we have a tokenized sequence 
+
 $$
 X=(x_0,x_1,…,x_t)
 $$
-then the perplexity of $X$ regarding to $\theta$ is :
 
-$$\text{PPL}(X) = \exp \Bigl\{ \frac{1}{t}\sum_{i=1}^t -\log p_\theta (x_i|x_{<i}) \Bigl\}$$
+then the perplexity of $X$regarding to $\theta$ is :
+
+$$
+\text{PPL}(X) = \exp \Bigl\{ \frac{1}{t}\sum_{i=1}^t -\log p_\theta (x_i|x_{<i}) \Bigl\}
+$$
+
 let's break this formula step-by-step:
-- $p_{\theta} (x_i|x_{<i})$ is the likelihood of the ith token conditioned on the preceding tokens $x_{<i}$​ according to our model
+- $p_{\theta} (x_i|x_{<i})$ is the likelihood of the ith token conditioned on the preceding tokens $x_{<i}$according to our model
 - $-\log (.)$ is the negative log of this likelihood
 - $\frac{1}{t}\sum_{i=1}^t(.)$ computes the average of the negative log-likelihood
 - $\exp \Bigl\{.\Bigl\}$ computes the exponential of the average.
@@ -41,8 +46,8 @@ Our model will process this sequence one token at a time and give us a probabili
     - $p(\text{"the"} | \text{})=0.6$
     - $p(\text{"cat"} | \text{})=0.05$
     - $p(\text{"couch"} | \text{})=0.1$
-    -  $p(\text{"sat"} | \text{})=0.15$
-    -  $p(\text{"on"} | \text{})=0.1$
+    - $p(\text{"sat"} | \text{})=0.15$
+    - $p(\text{"on"} | \text{})=0.1$
 
 We only care about the probability of the **actual** token, which is **0.6**.
 
@@ -53,8 +58,8 @@ We only care about the probability of the **actual** token, which is **0.6**.
     - $p(\text{"the"} | \text{"the"})=0.01$
     - $p(\text{"cat"} | \text{"the"})=0.5$
     - $p(\text{"couch"} | \text{"the"})=0.4$
-    -  $p(\text{"sat"} | \text{"the"})=0.04$
-    -  $p(\text{"on"} | \text{"the"})=0.05$
+    - $p(\text{"sat"} | \text{"the"})=0.04$
+    - $p(\text{"on"} | \text{"the"})=0.05$
 
 The probability of the **actual** token is **0.5**.
 
@@ -65,8 +70,8 @@ The probability of the **actual** token is **0.5**.
     - $p(\text{"the cat"} | \text{"the"})=0.05$
     - $p(\text{"cat"} | \text{"the cat"})=0.2$
     - $p(\text{"couch"} | \text{"the cat"})=0.05$
-    -  $p(\text{"sat"} | \text{"the cat"})=0.4$
-    -  $p(\text{"on"} | \text{"the cat"})=0.3$
+    - $p(\text{"sat"} | \text{"the cat"})=0.4$
+    - $p(\text{"on"} | \text{"the cat"})=0.3$
 
 The probability of the **actual** token is **0.4**.
 
@@ -79,16 +84,19 @@ Now we have the probabilities for the correct tokens at each step: _[0.6, 0.5, 0
     - $log_2(0.5)=−1.0$
     - $log_2(0.4)≈−1.322$
 2. **Calculate the average negative log-likelihood (the cross-entropy)**: 
+
 $$
 \begin{align}
 H(X) & =\frac{1}{t}\sum_{i=1}^t -\log p_\theta (x_i|x_{<i})\notag\\
  & =\frac{1}{3}(0.737+1.0+1.322)\notag\\
- & =\frac{1}{3}​(3.059)\notag\\
+ & =\frac{1}{3}(3.059)\notag\\
 & ≈1.02\notag\\
 \end{align}
 $$
+
 3. **Calculate the perplexity by exponentiating**: 
-*$$
+
+$$
 \begin{align}
 PPL(X) & =2^{H(W)}\notag\\
 &=2^{1.02}\notag\\
