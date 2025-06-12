@@ -69,7 +69,7 @@ Detail the specific experimental configurations, including:
 	![[the_illusion_of_thinking_8.png]]![[the_illusion_of_thinking_9.png]]
 	![[the_illusion_of_thinking_10.png]]
 	![[the_illusion_of_thinking_11.png]]
-- Those models are multimodal, the experiment would have been closer to their actual capacities if it provides the models a way to see the flow of resolution. Puzzles like the Tower of Hanoi, Blocks World, and Checker Jumping are fundamentally spatial. Humans often solve them by visualizing the state of the board or pegs. A text-based representation like `[['A', 'B'], ['C', 'D'], []]` is an abstract and less intuitive way to represent a physical arrangement compared to an image. The paper itself uses diagrams to explain the puzzles to the reader, tacitly acknowledging the value of visual aids, yet this advantage is not extended to the models being tested.
+- Those models are multimodal, the experiment would have been closer to their actual capacities if it provides the models a way to see the flow of resolution. Puzzles like the Tower of Hanoi, Blocks World, and Checker Jumping are fundamentally spatial. Humans often solve them by visualizing the state of the board or pegs. A text-based representation like _\[['A', 'B'], ['C', 'D'], []]_ is an abstract and less intuitive way to represent a physical arrangement compared to an image. The paper itself uses diagrams to explain the puzzles to the reader, tacitly acknowledging the value of visual aids, yet this advantage is not extended to the models being tested.
 
 The X user [@scaling01](https://x.com/scaling01) made several excellent points about this experimentation:
 
