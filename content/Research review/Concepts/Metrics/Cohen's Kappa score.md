@@ -11,17 +11,17 @@ date: 2025-06-25
 ## Formula
 
 Let $X=(x_1,...x_N)$ be a dataset of $N$ input values,
-	$Y=(y_1,...,y_C)$ the set of $C$ possible categorical outputs,
-	$h_1:X→Y$, $h_2:X→Y$ two classifiers from $X$ to $Y$,
-	$M∈M_{C \times C}(\mathbb{N})$ the confusion matrix of classification from $h_1$ and $h_2$
+>$Y=(y_1,...,y_C)$ the set of $C$ possible categorical outputs,
+>$h_1:X→Y$, $h_2:X→Y$ two classifiers from $X$ to $Y$,
+>$M∈M_{C \times C}(\mathbb{N})$ the confusion matrix of classification from $h_1$ and $h_2$
 
 Then $P_o$ the **observed proportion of agreement between the $K$ classifiers** is:
 $$
 P_0=\frac{1}{N}\sum_{c=1}^{C}\text{diag}(M)_c
 $$
 Let $n_{k,c}$ be the number of samples classified by $h_k$ into category $c$,
-	$\widehat{p_{k,c}}$ the estimated probability that $h_k$ will classify an item into $c$,
-	$\widehat{p_{c}}$ the estimated probability that all $h_1$ and $h_2$ will classify the same item into $c$
+>$\widehat{p_{k,c}}$ the estimated probability that $h_k$ will classify an item into $c$,
+>$\widehat{p_{c}}$ the estimated probability that all $h_1$ and $h_2$ will classify the same item into $c$
 
 Then $P_e$ the **expected proportion of agreement by chance** is:
 
@@ -92,7 +92,7 @@ $$
 \begin{align}
 Kappa & = \frac{P_o - P_e}{1 - P_e}\notag\\
 & = \frac{0.85 - 0.60}{1-0.60}\notag\\
-& = 0.625
+& = 0.625\notag\\
 \end{align}
 $$
 
