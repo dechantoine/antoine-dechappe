@@ -16,7 +16,7 @@ $$
 X=(x_0,x_1,…,x_t)
 $$
 
-then the perplexity of $X$regarding to $\theta$ is :
+then the perplexity of $X$ regarding to $\theta$ is :
 
 $$
 \text{PPL}(X) = \exp \Bigl\{ \frac{1}{t}\sum_{i=1}^t -\log p_\theta (x_i|x_{<i}) \Bigl\}
