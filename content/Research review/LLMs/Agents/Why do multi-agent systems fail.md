@@ -31,16 +31,6 @@ Because the definition of agents is not a resolved debate, in this paper it mean
 
 A multi-agent system (MAS) is then defined as **a collection of agents designed to interact through orchestration**, enabling collective intelligence.
 
-**Cohen's Kappa score** is a statistic used to **measure inter-rater reliability** (or inter-annotator agreement) for categorical items. Kappa takes into account the possibility of agreement occurring by chance.
->Given $P_o$ the observed proportion of agreement and $P_e$  the expected proportion of agreement by chance, the Kappa score is:
->$$
->Kappa = \frac{P_o - P_e}{1 - P_e}
->$$
->Kappa values range from -1 to 1:
->- **1:** Perfect agreement
->- **0:** Agreement equivalent to chance
->- **-1:** Perfect disagreement (though this is rare)
-
 ### Objectives
 
 The primary objectives of the study are:
@@ -65,7 +55,7 @@ The primary objectives of the study are:
     - Each trace averages over 15,000 lines of text.  
 
 - **Metrics**:
-    - **Cohen's Kappa:** used to measure inter-annotators reliability. The annotators are the human experts and the LLM annotator.  
+    - **[[Cohen's Kappa score]]:** used to measure inter-annotators reliability. The annotators are the human experts and the LLM annotator.  
     - **Accuracy, Recall, Precision, and F1 score**:  used to evaluate the performance of the LLM annotator.  
 ___
 
