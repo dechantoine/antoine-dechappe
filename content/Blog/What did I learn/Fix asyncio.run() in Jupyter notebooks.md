@@ -27,7 +27,9 @@ asyncio.run(test_async())
 
 ran in a notebook cell will raise:
 
-```>>> RuntimeError: asyncio.run() cannot be called from a running event loop```
+```console
+RuntimeError: asyncio.run() cannot be called from a running event loop
+```
 
 ### Solutions
 
