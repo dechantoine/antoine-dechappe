@@ -15,7 +15,7 @@ It also comes with two learnable parameters, $γ$ and $β$, which respectively r
 This is in contrast to **Batch Normalization**, which calculates the mean and variance across all the data samples in a batch for a given layer.
 ## Formula
 
-Let consider a layer outputs $X$ of shape `(batch_size, input_sample_shape)`where `input_sample_shape`can be an arbitrary dimension (a 3 dimensional image for example)
+Let consider a layer outputs $X$ of shape `(batch_size, input_sample_shape)`where `input_sample_shape` can be an arbitrary dimension (a 3 dimensional image for example).
 
 then the Layer Normalization of outputs of this layer is:
 
@@ -36,7 +36,8 @@ If we introduce a Layer Normalization between the two layers, here is how it wou
 
 **1. Calculate the mean $µ$**
 
-$$\begin{align}
+$$
+\begin{align}
 µ(X) & =\frac{2+4+6+8}{4}\notag\\
 & = 5\notag\\
 \end{align}
@@ -44,7 +45,8 @@ $$
 
 **2. Calculate the standard deviation $σ$**
 
-$$\begin{align}
+$$
+\begin{align}
 σ(X) & =\sqrt{\frac{(2-µ)^2+(4-µ)^2+(6-µ)^2+(8-µ)^2}{4}}\notag\\
 & = \sqrt{\frac{9+1+1+9}{4}}\notag\\
 & = \sqrt{5}\notag\\
