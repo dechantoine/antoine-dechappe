@@ -26,22 +26,31 @@ Large Language Models (LLMs) have a striking ability to learn new patterns at in
 - **Contextual Block ($T_W$):** 
 > 	A generalization of a transformer block. It is the composition of a contextual layer $A$ with a neural network $M_W$ (e.g., an MLP) 
 > 	
-> 	$$T_W = M_W \circ A$$
+> 	$$
+>   T_W = M_W \circ A
+>   $$
 
 - **Main Theorem (Theorem 2.2):** 
 >	The paper's core theoretical claim. It states that the effect of a portion of the context, $Y \subset C$, on an input $x$ can be perfectly transferred into the weights of the neural network $M_W$. The theorem is expressed as: 
 >	
->	$$T_{W}(C,x)=T_{W+\Delta W(Y)}(C\backslash Y,x)$$
->	The implicit weight update $\Delta W(Y)$ is a rank-1 matrix given by the formula: 
+>   $$
+>   T_{W}(C,x)=T_{W+\Delta W(Y)}(C\backslash Y,x)
+>   $$
 >	
->	$$\Delta W(Y)=\frac{\bigl(W\Delta A(Y)\bigr)A(C\backslash Y,x)^{T}}{||A(C\backslash Y,x)||^{2}}$$
+>   The implicit weight update $\Delta W(Y)$ is a rank-1 matrix given by the formula: 
+>	
+>	$$
+>   \Delta W(Y)=\frac{\bigl(W\Delta A(Y)\bigr)A(C\backslash Y,x)^{T}}{||A(C\backslash Y,x)||^{2}}
+>   $$
 >	
 >	where $\Delta A(Y)=A(C,x)-A(C\backslash Y,x)$ is the "context vector" associated with $Y$. 
 
 - **Implicit Learning Dynamics (Proposition 3.1):** 
 > 	The paper shows that the sequential processing of context tokens $C=[c_1, ..., c_n]$ generates a sequence of weight updates $W_1, ..., W_n$. This iterative process can be realized as a form of stochastic gradient update: 
 > 	
-> 	$$W_{i}=W_{i-1}-h\nabla_{W}L_{i}(W_{i-1})$$
+> 	$$
+>   W_{i}=W_{i-1}-h\nabla_{W}L_{i}(W_{i-1})
+>   $$
 > 	
 > 	with :
 >	- learning rate $h=\frac{1}{||A(x)||^2}$
