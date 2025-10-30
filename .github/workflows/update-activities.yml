@@ -17,8 +17,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           # This must match the username the action is running for
-          USERNAME: "dechantoine"
+          GH_USERNAME: "dechantoine"
           # Path to the file to update
-          README_PATH: "content/about-me.md"
+          TARGET_FILE: "content/about-me.md"
           # Message for the commit
           COMMIT_MSG: "chore(readme): update recent activity"
