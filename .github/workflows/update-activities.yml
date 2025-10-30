@@ -1,0 +1,24 @@
+name: Update README Activity
+
+on:
+  schedule:
+    # Runs every 7 days
+    - cron: "*/7 * * * *"
+  workflow_dispatch: # Allows manual triggering
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Update activity
+    steps:
+      - uses: actions/checkout@v4
+      - uses: jamesgeorge007/github-activity-readme@v4
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          # This must match the username the action is running for
+          USERNAME: "dechantoine"
+          # Path to the file to update
+          README_PATH: "content/about-me.md"
+          # Message for the commit
+          COMMIT_MSG: "chore(readme): update recent activity"
