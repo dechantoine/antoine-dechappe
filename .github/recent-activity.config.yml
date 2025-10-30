@@ -1,0 +1,26 @@
+settings:
+  username: "dechantoine"
+  commit_msg: "⚡ Update README with the recent activity"
+  max_lines: 10
+  readme_file: "./content/about-me.md"
+  disabled_events:
+    - "comments"
+    - "create_repo"
+    - "fork"
+    - "member"
+    - "push"
+    - "star"
+  commit_name: "readme-bot"
+  commit_email: "41898282+github-actions[bot]@users.noreply.github.com"
+  line_prefix: "{NUM}. "
+  ignored_repos:
+    - dechantoine/dechantoine.github.io
+messages:
+  issue_opened: "❗️ Opened issue {ID} in {REPO}"
+  issue_closed: "✔️ Closed issue {ID} in {REPO}"
+  pr_opened: "💪 Opened PR {ID} in {REPO}"
+  pr_closed: "❌ Closed PR {ID} in {REPO}"
+  pr_merged: "🎉 Merged PR {ID} in {REPO}"
+  changes_approved: "👍 Approved {ID} in {REPO}"
+  changes_requested: "🔴 Requested changes in {ID} in {REPO}"
+  new_release: "✌️ Released {ID} in {REPO}"
