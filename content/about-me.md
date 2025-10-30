@@ -17,7 +17,7 @@ I continue to pursue this path with the same intellectual curiosity and freshnes
 - 🥸 Fun fact about me: I used to think GANs were the next big thing and studied a lot about them... now I aim for more stable training curves.
 - 🎓 I am a certified [Google Cloud Professional Machine Learning Engineer](https://google.accredible.com/2c755aa9-55bc-4977-b61e-7decd812a43akey=3b0e57f6a6826e7a39c8937d558851a71fa8d43b547e8db036d3d2a0c0a4c5da) & and continually sharpen my skills by earning new [GCP skillsboost badges](https://www.cloudskillsboost.google/public_profiles/9a84d1f9-3767-4850-9961-d0d1dcbcda43).
 
-### 🌐 Recent open-source contributions
+## 🌐 Recent open-source contributions
 
 <!--START_SECTION:activity-->
 <!--END_SECTION:activity-->
