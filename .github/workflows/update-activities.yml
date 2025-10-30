@@ -1,7 +1,6 @@
 name: Update README Activity
 
 on:
-  schedule:
   workflow_dispatch: # Allows manual triggering
 
 jobs:
