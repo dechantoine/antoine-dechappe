@@ -1,7 +1,7 @@
 settings:
   username: "dechantoine"
   commit_msg: "⚡ Update README with the recent activity"
-  max_lines: 10
+  max_lines: 30
   readme_file: "./content/about-me.md"
   disabled_events:
     - "comments"

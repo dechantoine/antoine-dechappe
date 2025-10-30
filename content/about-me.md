@@ -19,13 +19,8 @@ I continue to pursue this path with the same intellectual curiosity and freshnes
 
 ## 🌐 Recent open-source contributions
 
-<!--START_SECTION:activity-->
-1. 💪 Opened PR [#21](undefined) in [dechantoine/dechantoine.github.io](https://github.com/dechantoine/dechantoine.github.io)
-2. 💪 Opened PR [#1594](undefined) in [googleapis/python-genai](https://github.com/googleapis/python-genai)
-3.  Labeled issue [#1593](https://github.com/googleapis/python-genai/issues/1593) in [googleapis/python-genai](https://github.com/googleapis/python-genai)
-4.  Labeled issue [#1593](https://github.com/googleapis/python-genai/issues/1593) in [googleapis/python-genai](https://github.com/googleapis/python-genai)
-5. ❗ Opened issue [#1593](https://github.com/googleapis/python-genai/issues/1593) in [googleapis/python-genai](https://github.com/googleapis/python-genai)
-<!--END_SECTION:activity-->
+<!--RECENT_ACTIVITY:start-->
+<!--RECENT_ACTIVITY:end-->
 
 ## 🛠️ Tools & technologies I master
 
