@@ -2,8 +2,6 @@ name: Update README Activity
 
 on:
   schedule:
-    # Runs every 7 days
-    - cron: "*/7 * * * *"
   workflow_dispatch: # Allows manual triggering
 
 jobs:
@@ -18,9 +16,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          # This must match the username the action is running for
           GH_USERNAME: "dechantoine"
-          # Path to the file to update
           TARGET_FILE: "content/about-me.md"
-          # Message for the commit
           COMMIT_MSG: "chore(readme): update recent activity"
+          MAX_LINES: 30
