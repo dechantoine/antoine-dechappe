@@ -20,8 +20,9 @@ I continue to pursue this path with the same intellectual curiosity and freshnes
 ## 🌐 Recent open-source contributions
 
 <!--RECENT_ACTIVITY:start-->
-1. 💪 Opened PR [#1594](undefined) in [googleapis/python-genai](https://github.com/googleapis/python-genai)<br>
-2. ❗️ Opened issue [#1593](https://github.com/googleapis/python-genai/issues/1593) in [googleapis/python-genai](https://github.com/googleapis/python-genai)<br>
+1. 💪 Opened PR [#152](undefined) in [makenotion/notion-mcp-server](https://github.com/makenotion/notion-mcp-server)<br>
+2. 💪 Opened PR [#1594](undefined) in [googleapis/python-genai](https://github.com/googleapis/python-genai)<br>
+3. ❗️ Opened issue [#1593](https://github.com/googleapis/python-genai/issues/1593) in [googleapis/python-genai](https://github.com/googleapis/python-genai)<br>
 <!--RECENT_ACTIVITY:end-->
 
 ## 🛠️ Tools & technologies I master
