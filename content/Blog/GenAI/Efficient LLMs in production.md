@@ -14,14 +14,14 @@ date: 2025-11-27
 
 ## ...keep in mind that
 
-- **Build vs Buy**: Do you really need to build your own wrapper/chain? Can you use a managed service or a high-level API?
-- **Data Privacy**: If you are using closed-source models, ensure you have a Data Processing Agreement (DPA) in place and that your data is not used for training.
 - **All LLMs become obsolete** at one point and closed-sources ones are frequently deprecated by providers: don't get too dependent of one.
 - **LLMs will hopefully become better and better**: even if your pipeline performances are not satisfying at the moment, give it another try in 6 months with the latest model.
-- **LLMs inference will decrease over time** and I bet it will be exponentially: ROI should also be adjusted frequently.
-- LLM provider are progressively rolling out **KV caching** ,so adapt your prompt to leverage this capacity and decrease your costs.
+- **LLMs inference prices will decrease over time** and I bet it will be exponentially: ROI should also be adjusted frequently.
+- LLM provider are progressively rolling out **KV caching**, so adapt your prompt to leverage this capacity and decrease your costs.
 - **LLM finetuning dataset is crucial** to understand what steers the model behavior: try to know how instructions are structured in the finetuning set and stick to the same format.
-- In addition to what will follow,  a GenAI project should follow the usual guidelines and requirements of an AI project: curated data, extensive evaluation before deployment, monitoring of application, etc.
+- **Hosting your own LLM** is a viable option if you have the resources and expertise to manage it, but it requires significant investment in hardware and time.
+- If you are using closed-source models, ensure you have a **Data Processing Agreement (DPA)** in place and that your data is not used for training.
+- A GenAI project should follow the usual guidelines and requirements of an AI project: curated data, extensive evaluation before deployment, monitoring of application, etc.
 
 # Models
 
@@ -36,8 +36,8 @@ date: 2025-11-27
 
 ### Open-weight or closed models ?
 
-- **Open models** (Llama 3.x, Mistral, Gemma) give **better data control, finetuning options, and possibly latency** (on-premises deployment). They are catching up rapidly in performance.
-- **Closed models** (GPT-4o, Claude 3.5 Sonnet, Gemini 1.5) offer **better out-of-the-box alignment, reasoning, and security guarantees** but less customization and data privacy control.
+- **Open models** (Llama 3.x, Mistral, Gemma, DeepSeek) give **better data control, finetuning options, and possibly latency** (on-premises deployment). They are catching up rapidly in performance.
+- **Closed models** (GPT-5, Claude Sonnet 4.5, Gemini 3.0) offer **better out-of-the-box alignment, reasoning, and security guarantees** but less customization and data privacy control.
 
 ### Benchmarks
 
@@ -47,9 +47,6 @@ Don't trust marketing numbers. Rely on community-driven leaderboards:
 - **Scale AI Leaderboards**: For coding and instruction following.
 - **Your own evaluation**: The only benchmark that matters is how the model performs on *your* specific data and task.
 
-
-
-### Pricing
 
 ### Pricing
 
@@ -93,7 +90,7 @@ You may also have the option to choose a dedicated endpoint. This is often a che
 
 - Most LLMs needs **explicit instructions to inform their role-play** of who they are, where they are, and what they should find relevant in their environment.
 
-- They have been finetuned with **specific tokens** for defining roles, tools and tasks: it is crucial to identify those tokens (either in document or in the dictionary of the tokenizer) and to use them properly
+- They have been finetuned with **specific tokens** for defining roles, tools and tasks: for open-source models, it is crucial to identify those tokens (either in document or in the dictionary of the tokenizer) and to use them properly. For closed-source models, it is highly recommended to leverage the associated API to define roles, tools, etc.
 
 - **Prefer zero-shot instructions over few-shot instructions:** Zero-shot are easier to understand, debug and reason about. They are plenty of cases where few-shoting is worse than zero-shot, mostly because it is biaising the model too much. Use few-shot examples as a last resort.
 
@@ -109,15 +106,6 @@ Many open-source frameworks compete for the orchestration layer.
 - **DSPy**: A radical shift from prompt engineering to programming. Great for optimizing complex pipelines.
 - **Smolagents**: A lightweight, code-centric agent framework by Hugging Face.
 
-## Agents
-
-Agents are systems where LLMs direct the control flow.
-
-- **ReAct**: The classic "Reason + Act" loop. The model thinks, chooses a tool, observes the output, and repeats.
-- **Plan-and-Solve**: The model first generates a plan, then executes it step-by-step. Better for complex tasks.
-- **Multi-Agent Systems**: Specialized agents collaborating (e.g., a Researcher, a Writer, and a Reviewer). Frameworks like **LangGraph** or **CrewAI** facilitate this.
-- **Code Agents**: Agents that write and execute code (Python) to solve problems, rather than just calling JSON tools. Often more robust for math and data tasks.
-
 ## Structured Outputs
 
 LLMs typically produces text output. However, you can constrain some of them to produce structured output in JSON format for applications that require it. You can also use an enum, which is a list of strings, in your schema to constrain the model to respond with one of a set of specified options.
@@ -131,7 +119,8 @@ Using structured output can be useful in a variety of scenarios. For example, yo
 Structured outputs offer great advantages and should be enforced as much as possible:
 - They integrate perfectly in workflows with a 100% respect of expected format
 - They interoperate seamlessly with typical typing packages
-- **Pydantic / Zod**: Use these libraries to define your schemas. Most modern LLM SDKs (OpenAI, Instructor, LangChain) support Pydantic models directly for validation and type safety.
+
+**Pydantic / Zod**: Use these libraries to define your schemas. Most modern LLM SDKs (OpenAI, Instructor, LangChain) support Pydantic models directly for validation and type safety.
 
 ## Tools & functions
 
@@ -185,7 +174,7 @@ If you are self-hosting models, optimization is key to reducing latency and cost
 
 # RAG vs Long Context
 
-With context windows reaching 1M+ tokens (Gemini 1.5, Claude 3), do we still need RAG?
+With context windows reaching 1M+ tokens, do we still need RAG?
 
 - **Use Long Context when**:
     - You have a specific, static set of documents that fits in context (e.g., a book, a codebase).
