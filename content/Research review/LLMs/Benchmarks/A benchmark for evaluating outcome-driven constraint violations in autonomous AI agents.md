@@ -1,6 +1,6 @@
 ---
 title: A benchmark for evaluating outcome-driven constraint violations in autonomous AI agents
-draft: true
+draft: false
 tags:
 paper: https://arxiv.org/pdf/2512.20798
 code: https://github.com/McGill-DMaS/ODCV-Bench
