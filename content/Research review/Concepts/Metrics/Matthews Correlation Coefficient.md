@@ -12,7 +12,9 @@ The **Matthews Correlation Coefficient (MCC)** is a statistic used to evaluate t
 
 The MCC is calculated using all four values of the **confusion matrix**: True Positives ($TP$), True Negatives ($TN$), False Positives ($FP$), and False Negatives ($FN$).
 
-$$MCC = \frac{(TP \times TN)-(FP \times FN)}{\sqrt{(TP+FP)(TP+FN)(TN+FP)(TN+FN)}}$$
+$$
+MCC = \frac{(TP \times TN)-(FP \times FN)}{\sqrt{(TP+FP)(TP+FN)(TN+FP)(TN+FN)}}
+$$
 ## Example
 
 Let's consider a medical screening test for a rare disease. We test **100** patients. The disease is only present in **10** of them.
@@ -25,7 +27,9 @@ Let's consider a medical screening test for a rare disease. We test **100** pati
 
 **1. Accuracy**
 
-$$Accuracy = \frac{7 + 85}{100} = 0.92$$
+$$
+Accuracy = \frac{7 + 85}{100} = 0.92
+$$
 
 At **92%**, accuracy is misleadingly high because it is dominated by the majority (healthy) class.
 
@@ -92,4 +96,4 @@ While the accuracy was **0.92**, the MCC is **~0.60**. This provides a more real
 
 - **Symmetry**: Unlike metrics like Precision, Recall or F1-score, MCC is symmetric. If you swap the "Positive" and "Negative" definitions, the MCC value remains unchanged.
 
-- **Comparison with [Cohen's Kappa**](https://antoine-does-ai.com/Research-review/Concepts/Metrics/Cohen's-Kappa-score): While both account for chance, MCC is a direct correlation coefficient. In modern ML research, MCC is often preferred because it is more mathematically robust to extreme class imbalances than Kappa.
+- **Comparison with [Cohen's Kappa](https://antoine-does-ai.com/Research-review/Concepts/Metrics/Cohen's-Kappa-score)**: While both account for chance, MCC is a direct correlation coefficient. In modern ML research, MCC is often preferred because it is more mathematically robust to extreme class imbalances than Kappa.
