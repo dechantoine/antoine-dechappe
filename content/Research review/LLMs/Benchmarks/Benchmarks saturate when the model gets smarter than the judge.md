@@ -61,14 +61,14 @@ The study addresses the growing challenge of accurately evaluating Large Languag
 	- 5.6% (247) of problems were tagged as "non-standard" because they were unsolvable with the given data or structurally unverifiable by an **exact-answer judge**:
 		- 61 problems with missing images
 
-		![[benchmarks_saturate_when_3.png]]
+			![[benchmarks_saturate_when_3.png]]
 		- 115 asking for proofs without proper reference solutions
 		- 54 requiring estimations	
 	
-		![[benchmarks_saturate_when_4.png]]
+			![[benchmarks_saturate_when_4.png]]
 		- 25 degenerate items such as duplicates or empty statements
 	
-		![[benchmarks_saturate_when_5.png]]
+			![[benchmarks_saturate_when_5.png]]
 
 - **Dominant Judge Miscalibration**: Expert annotations of disagreements revealed that, once dataset errors were excluded, Omni-Judge was incorrect in **96.4%** of cases. This demonstrates that judge incompetence can mask true model improvements well before a benchmark actually saturates.
 ![[benchmarks_saturate_when_6.png]]
