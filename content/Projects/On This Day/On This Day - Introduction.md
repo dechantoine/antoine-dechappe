@@ -6,7 +6,7 @@ tags:
   - automation
   - video-generation
   - side-project
-date: 2025-01-24
+date: 2026-07-24
 ---
 <!-- PROJECT LOGO -->
 <div align="center">
@@ -72,7 +72,7 @@ generating content with LLMs and diffusion models were worth writing about. This
 
 # Demo
 
-The most-watched video from the run — on Genghis Khan and Jalal al-Din at the Indus River, November 24, 1221:
+The most-watched video from the run, on Genghis Khan and Jalal al-Din at the Indus River, November 24, 1221:
 
 <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@on_this_day_videos/video/7576276985589009686" data-video-id="7576276985589009686" style="max-width: 605px;min-width: 325px;" >
   <section>
